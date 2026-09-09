@@ -213,7 +213,7 @@ p:last-child{margin-bottom:0}
 .tag--land{background:#EFEAF6;color:#553D8A}
 
 /* --- Map ----------------------------------------------------------------- */
-#map{height:min(66vh,560px);width:100%;border:1px solid var(--line);border-radius:var(--radius);background:var(--aqua-light);z-index:1}
+#map{height:clamp(380px,66vh,560px);width:100%;border:1px solid var(--line);border-radius:var(--radius);background:var(--aqua-light);z-index:1}
 .leaflet-popup-content{font-family:var(--body);font-size:.9rem;margin:.8rem 1rem}
 .leaflet-popup-content b{font-family:var(--display);font-size:1.15rem;text-transform:uppercase;display:block;line-height:1.15}
 .map-legend{display:flex;flex-wrap:wrap;gap:1.25rem;margin-top:1.25rem;font-size:.85rem;color:var(--ink-soft)}

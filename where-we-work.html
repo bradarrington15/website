@@ -201,6 +201,9 @@
   group.addTo(map);
   map.fitBounds(group.getBounds(), { padding: [40, 40] });
 
+  // Re-measure once the container has settled (fonts, late layout, hidden-then-shown panes)
+  window.addEventListener('load', function () { map.invalidateSize(); });
+
   // Scroll-wheel zoom only once the user has clicked into the map
   map.on('focus', function () { map.scrollWheelZoom.enable(); });
   map.on('blur',  function () { map.scrollWheelZoom.disable(); });
