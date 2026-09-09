@@ -26,17 +26,17 @@ Then open <http://localhost:8000>.
 
 ## Deploy to GitHub Pages
 
-1. Create an empty repo on GitHub (no README, no .gitignore).
-2. Point this repo at it and push:
+The remote is already configured: <https://github.com/bradarrington15/website>
 
-   ```bash
-   git remote add origin https://github.com/<your-username>/<repo>.git
-   git branch -M main
-   git push -u origin main
-   ```
+```bash
+git push -u origin main
+```
 
-3. In the repo: **Settings → Pages → Source: Deploy from a branch → `main` / `/ (root)`**.
-4. The site goes live at `https://<your-username>.github.io/<repo>/` in a minute or two.
+Then in the repo on GitHub: **Settings → Pages → Source: Deploy from a branch →
+`main` / `/ (root)`**.
+
+The site goes live at **<https://bradarrington15.github.io/website/>** a minute or two later.
+All paths in the site are relative, so it works correctly from that subdirectory.
 
 `.nojekyll` is present so GitHub Pages serves every file verbatim.
 
