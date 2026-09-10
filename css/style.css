@@ -200,6 +200,13 @@ p:last-child{margin-bottom:0}
 /* --- Team ---------------------------------------------------------------- */
 .team{display:grid;gap:clamp(1.5rem,3vw,2.25rem);grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
 .member img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--radius);background:var(--sand)}
+.member__avatar{
+  width:100%;aspect-ratio:1;border-radius:var(--radius);display:grid;place-items:center;
+  background:var(--aqua-light);border:2px dashed var(--aqua);color:var(--deep);
+  font-family:var(--display);font-size:2.8rem;font-weight:700;letter-spacing:.04em;
+}
+.team--bios{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.team--bios .member__bio{font-size:.9rem}
 .member__name{font-family:var(--display);font-size:1.3rem;font-weight:700;text-transform:uppercase;margin:.85rem 0 .1rem;line-height:1.1}
 .member__role{font-size:.83rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
 .member__bio{font-size:.92rem;color:var(--ink-soft);margin-top:.5rem;line-height:1.6}
