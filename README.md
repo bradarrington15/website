@@ -10,7 +10,8 @@ and straightforward to port into Wix later.
 | --- | --- |
 | `index.html` | Home — mission, why reefs matter, key elements of restoration, history timeline |
 | `about.html` | Mission & goals, citizen science, bleaching reports, sick-coral ID, team |
-| `restoration.html` | Methods, microfragmentation, outplanting, the 8 coral species |
+| `restoration.html` | Methods, microfragmentation, outplanting, Rescue to Reef, the 8 coral species |
+| `additional-projects.html` | Projects beyond the nurseries — currently the artificial reef |
 | `where-we-work.html` | Interactive Leaflet map of 24 field sites + site index |
 | `get-involved.html` | Be a Reef Responder, sign-up, partners, downloads |
 | `donate.html` | Appeal, impact tiers, giving options (→ GiveSmart) |
@@ -46,8 +47,12 @@ All paths in the site are relative, so it works correctly from that subdirectory
   Brand red `#C92838`, brand ink `#231F20`, ocean accents alongside.
 - **Map sites** — `js/sites.js`. Each entry has `name`, `lat`, `lng`, `region`, and `type`
   (`"facility"` = red marker, `"site"` = teal). Derived from *Reef Response on the Map.kml*.
-- **Navigation** — the `<nav>` block is repeated in the header of each page; update all seven
-  if you add a page.
+- **Navigation** — the `<nav>` block is repeated in the header of each page; update all eight
+  if you add a page. The nav collapses to a menu button below 1240px (set in both
+  `css/style.css` and `js/main.js` — keep the two in sync).
+- **Adding a project** — `additional-projects.html` is built to hold several. Copy the
+  artificial reef section: a `<section>` with an `id`, a lead `<figure>`, body copy, and an
+  optional `.spec` or `.gallery` block.
 
 ## Before launch — what still needs content
 

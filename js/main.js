@@ -19,7 +19,7 @@
     }
   });
   window.addEventListener('resize', function () {
-    if (window.innerWidth > 960) {
+    if (window.innerWidth > 1240) {
       nav.classList.remove('is-open');
       btn.setAttribute('aria-expanded', 'false');
       btn.textContent = 'Menu';
