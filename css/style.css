@@ -247,6 +247,7 @@ p:last-child{margin-bottom:0}
   content:"";position:absolute;left:calc(-2rem - 9px);top:.55rem;width:15px;height:15px;
   border-radius:50%;background:var(--red);border:3px solid #fff;box-shadow:0 0 0 1px var(--line);
 }
+.timeline h4{margin:.15em 0 .4em;font-size:1.1rem}
 .timeline time{font-family:var(--display);font-size:1.6rem;font-weight:700;color:var(--red);display:block;line-height:1;margin-bottom:.3rem}
 
 /* --- Forms --------------------------------------------------------------- */
