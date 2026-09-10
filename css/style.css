@@ -320,11 +320,12 @@ p:last-child{margin-bottom:0}
 
 /* --- Partners ------------------------------------------------------------ */
 .partners{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
-.partners a{
+.partners a,.partners span{
   display:flex;align-items:center;justify-content:center;text-align:center;min-height:96px;padding:1rem;
   border:1px solid var(--line);border-radius:var(--radius);background:#fff;color:var(--ink);
   font-weight:600;font-size:.9rem;line-height:1.35;
 }
+.partners span{border-style:dashed;color:var(--muted);background:var(--sand)}
 .partners a:hover{border-color:var(--red);color:var(--red);text-decoration:none}
 
 /* --- Footer -------------------------------------------------------------- */

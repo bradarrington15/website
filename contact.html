@@ -56,57 +56,44 @@
   <div class="wrap">
     <div class="feature">
       <div>
-        <span class="eyebrow">Send a message</span>
+        <span class="eyebrow">Get in touch</span>
         <hr class="rule">
         <h2>Contact Reef Response</h2>
-        <!-- TODO: GitHub Pages cannot process form submissions on its own.
-             Either (a) create a free Formspree form and paste its endpoint into the action
-             below, or (b) delete this form and rely on the mailto link. Wix has a built-in
-             form widget you can swap in at port time. -->
-        <p><span class="todo">TODO: add form endpoint (see comment in source)</span></p>
-        <form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          <div class="field">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" autocomplete="name" required>
-          </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" required>
-          </div>
-          <div class="field">
-            <label for="topic">What&rsquo;s this about?</label>
-            <select id="topic" name="topic">
-              <option>Volunteering / Reef Responder program</option>
-              <option>Reporting coral bleaching or disease</option>
-              <option>Partnership or sponsorship</option>
-              <option>Media or speaking request</option>
-              <option>Something else</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
-          <div>
-            <button class="btn btn--lg" type="submit">Submit</button>
-          </div>
-          <p class="form__note">We read every message, but response times vary with the field
-            season.</p>
-        </form>
+        <p class="lede">The fastest way to reach us is email &mdash; we read everything that comes
+          in, though response times vary with the field season.</p>
+        <div class="btn-row">
+          <a class="btn btn--lg" href="mailto:vireefresponse@gmail.com">vireefresponse@gmail.com</a>
+        </div>
+
+        <h3 style="margin-top:2.5rem">What to include</h3>
+        <p>A line or two of context helps us route your message to the right person:</p>
+        <ul style="padding-left:1.15rem;display:grid;gap:.5rem;margin:1rem 0 0">
+          <li><strong>Volunteering</strong> &mdash; your certification level and diving or
+            snorkelling experience</li>
+          <li><strong>Coral bleaching or disease</strong> &mdash; please use the
+            <a href="https://survey123.arcgis.com/share/9838819b5e1748448297255f6fd1a183" rel="noopener">Coral Health Reporting Form</a> instead, so the
+            location and details reach our monitoring data directly</li>
+          <li><strong>Partnership or sponsorship</strong> &mdash; your organization and what you
+            have in mind</li>
+          <li><strong>Media or speaking requests</strong> &mdash; your outlet, topic, and deadline</li>
+        </ul>
+        <!-- NOTE: GitHub Pages cannot process form submissions, so this page uses a mailto link
+             rather than a contact form that would silently fail. Add a real form at the Wix port
+             (Wix Forms), or wire one to a service such as Formspree before then. -->
       </div>
       <div>
         <div class="card card--sand">
           <h3>Reef Response</h3>
-<!-- TODO CONTENT -->
-<div class="todo-block"><strong>Needs content — Contact details</strong><p>Add the program's public email address, phone number, and the CMES mailing address.</p></div>
-          <ul style="list-style:none;padding:0;margin:1.5rem 0 0;display:grid;gap:1rem">
-            <li><strong>Email</strong><br><span class="todo">Add email address</span></li>
+          <ul style="list-style:none;padding:0;margin:1.25rem 0 0;display:grid;gap:1.15rem">
+            <li><strong>Email</strong><br><a href="mailto:vireefresponse@gmail.com">vireefresponse@gmail.com</a></li>
             <li><strong>Phone</strong><br><span class="todo">Add phone number</span></li>
             <li><strong>Address</strong><br>
               Center for Marine and Environmental Studies<br>
               University of the Virgin Islands<br>
               St. Thomas, U.S. Virgin Islands<br>
               <span class="todo">Confirm full mailing address</span></li>
+            <li><strong>Report coral health</strong><br>
+              <a href="https://survey123.arcgis.com/share/9838819b5e1748448297255f6fd1a183" rel="noopener">Coral Health Reporting Form</a></li>
           </ul>
           <div class="btn-row">
             <a class="btn btn--outline" href="where-we-work.html">Find us on the map</a>
@@ -130,9 +117,9 @@
       <a href="https://www.uvi.edu" rel="noopener">University of the Virgin Islands</a>
       <a href="https://viepscor.org" rel="noopener">VI EPSCoR</a>
       <a href="https://www.uvi.edu/research/mare/youth-ocean-explorers/" rel="noopener">Youth Ocean Explorers</a>
-      <a href="#" aria-disabled="true">VI-CDAC</a>
-      <a href="#" aria-disabled="true">CORE Foundation</a>
-      <a href="#" aria-disabled="true"><span class="todo">Add partner</span></a>
+      <span>VI-CDAC <span class="todo">add link</span></span>
+      <span>CORE Foundation <span class="todo">add link</span></span>
+      <span><span class="todo">Add partner</span></span>
     </div>
   </div>
 </section>
@@ -173,6 +160,7 @@
           <li><a href="about.html#report">Report coral bleaching</a></li>
           <li><a href="donate.html">Make a donation</a></li>
           <li><a href="contact.html">Contact us</a></li>
+          <li><a href="mailto:vireefresponse@gmail.com">vireefresponse@gmail.com</a></li>
         </ul>
       </div>
       <div>
