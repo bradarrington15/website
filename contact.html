@@ -56,30 +56,60 @@
   <div class="wrap">
     <div class="feature">
       <div>
-        <span class="eyebrow">Get in touch</span>
+        <span class="eyebrow">Send a message</span>
         <hr class="rule">
         <h2>Contact Reef Response</h2>
-        <p class="lede">The fastest way to reach us is email &mdash; we read everything that comes
-          in, though response times vary with the field season.</p>
-        <div class="btn-row">
-          <a class="btn btn--lg" href="mailto:vireefresponse@gmail.com">vireefresponse@gmail.com</a>
-        </div>
+        <p class="lede">Tell us what you&rsquo;re after and we&rsquo;ll point it at the right
+          person. We read everything, though response times vary with the field season.</p>
 
-        <h3 style="margin-top:2.5rem">What to include</h3>
-        <p>A line or two of context helps us route your message to the right person:</p>
-        <ul style="padding-left:1.15rem;display:grid;gap:.5rem;margin:1rem 0 0">
-          <li><strong>Volunteering</strong> &mdash; your certification level and diving or
-            snorkelling experience</li>
-          <li><strong>Coral bleaching or disease</strong> &mdash; please use the
-            <a href="https://survey123.arcgis.com/share/9838819b5e1748448297255f6fd1a183" rel="noopener">Coral Health Reporting Form</a> instead, so the
-            location and details reach our monitoring data directly</li>
-          <li><strong>Partnership or sponsorship</strong> &mdash; your organization and what you
-            have in mind</li>
-          <li><strong>Media or speaking requests</strong> &mdash; your outlet, topic, and deadline</li>
-        </ul>
-        <!-- NOTE: GitHub Pages cannot process form submissions, so this page uses a mailto link
-             rather than a contact form that would silently fail. Add a real form at the Wix port
-             (Wix Forms), or wire one to a service such as Formspree before then. -->
+        <!-- ─────────────────────────────────────────────────────────────────────────
+             PORTING TO WIX: replace this whole <form> with a Wix Forms element and
+             delete the <script> at the bottom of this file.
+
+             UNTIL THEN: GitHub Pages cannot process form submissions, so the script
+             intercepts submit and opens the visitor's mail client with the fields
+             pre-filled, addressed to vireefresponse@gmail.com. Nothing is silently
+             discarded. To use a real endpoint instead (e.g. Formspree), put it in
+             the action below and delete the script.
+             ───────────────────────────────────────────────────────────────────────── -->
+        <form class="form" id="contact-form" action="mailto:vireefresponse@gmail.com" method="POST"
+              enctype="text/plain">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="topic">What&rsquo;s this about?</label>
+            <select id="topic" name="topic">
+              <option>Volunteering / Reef Responder program</option>
+              <option>Reporting coral bleaching or disease</option>
+              <option>Partnership or sponsorship</option>
+              <option>Media or speaking request</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <div>
+            <button class="btn btn--lg" type="submit">Submit</button>
+          </div>
+          <p class="form__note">Submitting opens your email app with this message ready to send.
+            You can also write to us directly at
+            <a href="mailto:vireefresponse@gmail.com">vireefresponse@gmail.com</a>.</p>
+        </form>
+
+        <div class="callout callout--aqua" style="margin-top:2rem">
+          <h3>Seen bleaching or disease?</h3>
+          <p>Please use the <a href="https://survey123.arcgis.com/share/9838819b5e1748448297255f6fd1a183" rel="noopener">Coral Health Reporting Form</a>
+            rather than this form &mdash; it captures the location and detail we need, and feeds
+            straight into our monitoring data.</p>
+        </div>
       </div>
       <div>
         <div class="card card--sand">
@@ -181,6 +211,25 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+/* Stopgap until the Wix port: GitHub Pages has no form backend, so compose a mailto
+   from the fields rather than letting the submission vanish. Delete with the form. */
+(function () {
+  var f = document.getElementById('contact-form');
+  if (!f) return;
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var v = function (id) { return (f.querySelector('#' + id) || {}).value || ''; };
+    var subject = '[' + v('topic') + '] ' + v('name');
+    var body = 'Name: ' + v('name') + '\nEmail: ' + v('email') +
+               '\nTopic: ' + v('topic') + '\n\n' + v('message');
+    window.location.href = 'mailto:vireefresponse@gmail.com' +
+      '?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(body);
+  });
+})();
+</script>
+
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 </body>
 </html>
