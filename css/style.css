@@ -257,6 +257,19 @@ p:last-child{margin-bottom:0}
 .tag--water{background:var(--aqua-light);color:var(--deep)}
 .tag--land{background:#EFEAF6;color:#553D8A}
 
+.figure{margin:0}
+.figure img{width:100%;border-radius:var(--radius);display:block}
+.figure figcaption{font-size:.83rem;color:var(--muted);margin-top:.6rem;line-height:1.5}
+.section--deep .figure figcaption{color:#9DBBC3}
+.spec{
+  display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+  margin:2rem 0 0;padding:1.75rem 1.25rem;border:1px solid rgba(255,255,255,.18);
+  border-radius:var(--radius);text-align:center;
+}
+.spec__num{font-family:var(--display);font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:700;line-height:1;color:#fff}
+.spec__label{font-size:.78rem;color:#A9C6CD;margin-top:.35rem;line-height:1.35}
+.gallery{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:2.5rem}
+
 /* --- Map ----------------------------------------------------------------- */
 #map{height:clamp(380px,66vh,560px);width:100%;border:1px solid var(--line);border-radius:var(--radius);background:var(--aqua-light);z-index:1}
 .leaflet-popup-content{font-family:var(--body);font-size:.9rem;margin:.8rem 1rem}

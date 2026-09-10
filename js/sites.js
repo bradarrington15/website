@@ -27,7 +27,7 @@ var REEF_SITES = [
     "lat": 18.34474,
     "lng": -65.01525,
     "region": "St. Thomas — South Shore",
-    "type": "site"
+    "type": "facility"
   },
   {
     "name": "Perseverance",
