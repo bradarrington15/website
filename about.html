@@ -10,6 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="images/logo.png">
 <link rel="icon" href="favicon.png" type="image/png">
+<link rel="preload" as="image" href="images/photos/hero-about.jpg">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -40,7 +41,8 @@
 <main id="main">
 
 <section class="hero hero--page">
-  <div class="hero__media" role="presentation"></div>
+  <div class="hero__media hero__media--photo" role="presentation"
+       style="background-image:url('images/photos/hero-about.jpg')"></div>
   <div class="wrap hero__inner">
     <span class="eyebrow" style="color:#7FE3DC">About us</span>
     <h1>Who we are</h1>
@@ -69,8 +71,8 @@
         </ol>
       </div>
       <div class="feature__media">
-<!-- TODO IMAGE: Team portrait on the dock or boat, gear on, before a dive. Suggested: 1200&times;900px. -->
-<div class="ph ph--wide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h3l2-2h8l2 2h3v12H3z" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5"/></svg><b>Photo placeholder</b><span>Team portrait on the dock or boat, gear on, before a dive. Suggested: 1200&times;900px.</span></div>
+<img src="images/photos/fabrication.jpg" alt="A Reef Response team member welding a steel coral nursery structure"
+             width="1200" height="900" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
@@ -80,8 +82,8 @@
   <div class="wrap">
     <div class="feature feature--flip">
       <div class="feature__media">
-<!-- TODO IMAGE: Citizen science volunteers cleaning nursery structures underwater. Suggested: 1200&times;900px. -->
-<div class="ph ph--wide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h3l2-2h8l2 2h3v12H3z" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5"/></svg><b>Photo placeholder</b><span>Citizen science volunteers cleaning nursery structures underwater. Suggested: 1200&times;900px.</span></div>
+<img src="images/photos/citizen-science.jpg" alt="A diver tending staghorn coral growing on an in-water nursery tree"
+             width="1200" height="900" loading="lazy" decoding="async">
       </div>
       <div>
         <span class="eyebrow">Citizen science</span>
@@ -170,61 +172,85 @@
       <hr class="rule">
       <p class="lede">Scientists, divers, and students restoring reefs across the U.S. Virgin
         Islands.</p>
-      <!-- NOTE: listed alphabetically by last name — reorder as you like. -->
+      <!-- NOTE: listed alphabetically by last name — reorder as you like.
+           TODO: 11 people shown = everyone found across both photo folders. Confirm who is
+           current staff and delete the rest. 4 more headshots are staged, unidentified, in
+           images/team/unidentified/ — name them and they can be added. -->
     </div>
     <div class="team">
       <article class="member">
-        <img src="images/team/brad-arrington.jpg" alt="Brad Arrington" loading="lazy" width="640" height="640">
+        <img src="images/team/brad-arrington.jpg" alt="Brad Arrington" loading="lazy" decoding="async" width="640" height="640">
         <h3 class="member__name">Brad Arrington</h3>
         <!-- TODO: replace with real title -->
         <p class="member__role"><span class="todo">Add title</span></p>
         <p class="member__bio"><span class="todo">Optional bio</span></p>
       </article>
       <article class="member">
-        <img src="images/team/natasha-bestrom.jpg" alt="Natasha Bestrom" loading="lazy" width="640" height="640">
+        <img src="images/team/natasha-bestrom.jpg" alt="Natasha Bestrom" loading="lazy" decoding="async" width="640" height="640">
         <h3 class="member__name">Natasha Bestrom</h3>
         <!-- TODO: replace with real title -->
         <p class="member__role"><span class="todo">Add title</span></p>
         <p class="member__bio"><span class="todo">Optional bio</span></p>
       </article>
       <article class="member">
-        <img src="images/team/marilyn-brandt.jpg" alt="Marilyn Brandt" loading="lazy" width="640" height="640">
+        <img src="images/team/marilyn-brandt.jpg" alt="Marilyn Brandt" loading="lazy" decoding="async" width="640" height="640">
         <h3 class="member__name">Marilyn Brandt</h3>
         <!-- TODO: replace with real title -->
         <p class="member__role"><span class="todo">Add title</span></p>
         <p class="member__bio"><span class="todo">Optional bio</span></p>
       </article>
       <article class="member">
-        <img src="images/team/kathryn-cobleigh.jpg" alt="Kathryn Cobleigh" loading="lazy" width="640" height="640">
+        <img src="images/team/kathryn-cobleigh.jpg" alt="Kathryn Cobleigh" loading="lazy" decoding="async" width="640" height="640">
         <h3 class="member__name">Kathryn Cobleigh</h3>
         <!-- TODO: replace with real title -->
         <p class="member__role"><span class="todo">Add title</span></p>
         <p class="member__bio"><span class="todo">Optional bio</span></p>
       </article>
       <article class="member">
-        <img src="images/team/nicholas-durgadeen.jpg" alt="Nicholas Durgadeen" loading="lazy" width="640" height="640">
+        <img src="images/team/nicholas-durgadeen.jpg" alt="Nicholas Durgadeen" loading="lazy" decoding="async" width="640" height="640">
         <h3 class="member__name">Nicholas Durgadeen</h3>
         <!-- TODO: replace with real title -->
         <p class="member__role"><span class="todo">Add title</span></p>
         <p class="member__bio"><span class="todo">Optional bio</span></p>
       </article>
       <article class="member">
-        <img src="images/team/rachel-ionata.jpg" alt="Rachel Ionata" loading="lazy" width="640" height="640">
+        <img src="images/team/samuel-gittens.jpg" alt="Samuel Gittens" loading="lazy" decoding="async" width="640" height="640">
+        <h3 class="member__name">Samuel Gittens</h3>
+        <!-- TODO: replace with real title -->
+        <p class="member__role"><span class="todo">Add title</span></p>
+        <p class="member__bio"><span class="todo">Optional bio</span></p>
+      </article>
+      <article class="member">
+        <img src="images/team/rachel-ionata.jpg" alt="Rachel Ionata" loading="lazy" decoding="async" width="640" height="640">
         <h3 class="member__name">Rachel Ionata</h3>
         <!-- TODO: replace with real title -->
         <p class="member__role"><span class="todo">Add title</span></p>
         <p class="member__bio"><span class="todo">Optional bio</span></p>
       </article>
       <article class="member">
-        <img src="images/team/dan-mele.jpg" alt="Dan Mele" loading="lazy" width="640" height="640">
+        <img src="images/team/sonora-meiling.jpg" alt="Sonora Meiling" loading="lazy" decoding="async" width="640" height="640">
+        <h3 class="member__name">Sonora Meiling</h3>
+        <!-- TODO: replace with real title -->
+        <p class="member__role"><span class="todo">Add title</span></p>
+        <p class="member__bio"><span class="todo">Optional bio</span></p>
+      </article>
+      <article class="member">
+        <img src="images/team/dan-mele.jpg" alt="Dan Mele" loading="lazy" decoding="async" width="640" height="640">
         <h3 class="member__name">Dan Mele</h3>
         <!-- TODO: replace with real title -->
         <p class="member__role"><span class="todo">Add title</span></p>
         <p class="member__bio"><span class="todo">Optional bio</span></p>
       </article>
       <article class="member">
-        <img src="images/team/jason-quetel.jpg" alt="Jason Quetel" loading="lazy" width="640" height="640">
+        <img src="images/team/jason-quetel.jpg" alt="Jason Quetel" loading="lazy" decoding="async" width="640" height="640">
         <h3 class="member__name">Jason Quetel</h3>
+        <!-- TODO: replace with real title -->
+        <p class="member__role"><span class="todo">Add title</span></p>
+        <p class="member__bio"><span class="todo">Optional bio</span></p>
+      </article>
+      <article class="member">
+        <img src="images/team/moriah-sevier.jpg" alt="Moriah Sevier" loading="lazy" decoding="async" width="640" height="640">
+        <h3 class="member__name">Moriah Sevier</h3>
         <!-- TODO: replace with real title -->
         <p class="member__role"><span class="todo">Add title</span></p>
         <p class="member__bio"><span class="todo">Optional bio</span></p>

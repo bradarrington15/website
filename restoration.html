@@ -10,6 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="images/logo.png">
 <link rel="icon" href="favicon.png" type="image/png">
+<link rel="preload" as="image" href="images/photos/hero-restoration.jpg">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -40,7 +41,8 @@
 <main id="main">
 
 <section class="hero hero--page">
-  <div class="hero__media" role="presentation"></div>
+  <div class="hero__media hero__media--photo" role="presentation"
+       style="background-image:url('images/photos/hero-restoration.jpg')"></div>
   <div class="wrap hero__inner">
     <span class="eyebrow" style="color:#7FE3DC">Our methods</span>
     <h1>Restoration</h1>
@@ -88,8 +90,8 @@
           reef community.</p>
       </div>
       <div class="feature__media">
-<!-- TODO IMAGE: Microfragments on cement pucks in the land-based water tables. Suggested: 1200&times;900px. -->
-<div class="ph ph--wide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h3l2-2h8l2 2h3v12H3z" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5"/></svg><b>Photo placeholder</b><span>Microfragments on cement pucks in the land-based water tables. Suggested: 1200&times;900px.</span></div>
+<img src="images/photos/microfragment.jpg" alt="Gloved hands mounting a coral microfragment onto a cement puck"
+             width="1200" height="900" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
@@ -99,8 +101,8 @@
   <div class="wrap">
     <div class="feature feature--flip">
       <div class="feature__media">
-<!-- TODO IMAGE: Diver cementing an outplant onto the reef. Suggested: 1200&times;900px. -->
-<div class="ph ph--wide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h3l2-2h8l2 2h3v12H3z" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5"/></svg><b>Photo placeholder</b><span>Diver cementing an outplant onto the reef. Suggested: 1200&times;900px.</span></div>
+<img src="images/photos/outplanting.jpg" alt="A diver attaching a staghorn coral fragment to the reef"
+             width="1200" height="900" loading="lazy" decoding="async">
       </div>
       <div>
         <span class="eyebrow">In-water nursery</span>
@@ -124,7 +126,13 @@
 </section>
 
 <section class="section section--deep">
-  <div class="wrap narrow">
+  <div class="wrap">
+    <div class="feature">
+      <div class="feature__media">
+        <img src="images/photos/fragments.jpg" alt="A gloved hand tending staghorn coral on an in-water nursery frame"
+             width="1200" height="900" loading="lazy" decoding="async">
+      </div>
+      <div>
     <span class="eyebrow">About our coral</span>
     <h2>Fragments of opportunity</h2>
     <hr class="rule">
@@ -138,6 +146,8 @@
       nursery. Our final source of corals includes those that have been taken off the reef in an
       effort to prevent them from becoming diseased, or to rehabilitate them after suffering from
       disease.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -152,8 +162,8 @@
     </div>
     <div class="species">
       <article>
-<!-- TODO IMAGE: Photo of <em>Acropora cervicornis</em> (Staghorn Coral). Suggested: 900&times;600px. -->
-<div class="ph "><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h3l2-2h8l2 2h3v12H3z" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5"/></svg><b>Photo placeholder</b><span>Photo of <em>Acropora cervicornis</em> (Staghorn Coral). Suggested: 900&times;600px.</span></div>
+<img src="images/photos/sp-acervicornis.jpg" alt="A staghorn coral colony growing on the reef with a diver in the background"
+             width="900" height="600" loading="lazy" decoding="async">
         <div class="species__body">
           <p class="species__sci">Acropora cervicornis</p>
           <h3 class="species__common">Staghorn Coral</h3>

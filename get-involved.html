@@ -10,6 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="images/logo.png">
 <link rel="icon" href="favicon.png" type="image/png">
+<link rel="preload" as="image" href="images/photos/hero-involved.jpg">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -40,7 +41,8 @@
 <main id="main">
 
 <section class="hero hero--page">
-  <div class="hero__media" role="presentation"></div>
+  <div class="hero__media hero__media--photo" role="presentation"
+       style="background-image:url('images/photos/hero-involved.jpg')"></div>
   <div class="wrap hero__inner">
     <span class="eyebrow" style="color:#7FE3DC">Get involved</span>
     <h1>Be a Reef Responder</h1>
@@ -72,8 +74,8 @@
         </ol>
       </div>
       <div class="feature__media">
-<!-- TODO IMAGE: Citizen scientists in the water with a nursery tree. Suggested: 1200&times;900px. -->
-<div class="ph ph--wide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h3l2-2h8l2 2h3v12H3z" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5"/></svg><b>Photo placeholder</b><span>Citizen scientists in the water with a nursery tree. Suggested: 1200&times;900px.</span></div>
+<img src="images/photos/responder.jpg" alt="A Reef Response diver working on the seafloor during a restoration dive"
+             width="1200" height="900" loading="lazy" decoding="async">
       </div>
     </div>
   </div>

@@ -125,6 +125,15 @@ p:last-child{margin-bottom:0}
   linear-gradient(180deg,rgba(11,60,73,.62) 0%,rgba(11,60,73,.78) 55%,rgba(35,31,32,.92) 100%),
   linear-gradient(135deg,#0E4D5C 0%,#12667A 45%,#0B3C49 100%);
 }
+.hero__media--photo{background:var(--deep) center/cover no-repeat}
+.hero__media--photo::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(11,60,73,.52) 0%,rgba(11,60,73,.68) 50%,rgba(35,31,32,.90) 100%);
+}
+.hero__media--photo::after{display:none}
+.feature__media img,.species img{border-radius:var(--radius);width:100%}
+.feature__media img{aspect-ratio:4/3;object-fit:cover}
+.species img{aspect-ratio:3/2;object-fit:cover;border-bottom:1px solid var(--line)}
 .hero__media::after{ /* subtle caustics */
   content:"";position:absolute;inset:-20%;opacity:.16;
   background:radial-gradient(ellipse 40% 25% at 20% 15%,#7FE3DC 0%,transparent 60%),

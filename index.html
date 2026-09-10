@@ -10,6 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="images/logo.png">
 <link rel="icon" href="favicon.png" type="image/png">
+<link rel="preload" as="image" href="images/photos/hero-home.jpg">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -40,7 +41,8 @@
 <main id="main">
 
 <section class="hero">
-  <div class="hero__media" role="presentation"></div>
+  <div class="hero__media hero__media--photo" role="presentation"
+       style="background-image:url('images/photos/hero-home.jpg')"></div>
   <div class="wrap hero__inner">
     <span class="eyebrow" style="color:#7FE3DC">University of the Virgin Islands</span>
     <h1>Reef <em>Response</em></h1>
@@ -73,8 +75,8 @@
         </div>
       </div>
       <div class="feature__media">
-<!-- TODO IMAGE: Wide shot of a diver tending an in-water coral nursery tree. Suggested: 1200&times;900px. -->
-<div class="ph ph--wide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h3l2-2h8l2 2h3v12H3z" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5"/></svg><b>Photo placeholder</b><span>Wide shot of a diver tending an in-water coral nursery tree. Suggested: 1200&times;900px.</span></div>
+<img src="images/photos/nursery-frame.jpg" alt="Two Reef Response divers installing a coral nursery structure on the seafloor"
+             width="1200" height="900" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
