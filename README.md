@@ -82,7 +82,6 @@ Outstanding items:
 - **Downloads** — add PDFs to a `downloads/` folder (the Nursery Maintenance Guidebook is ready)
 - **Donation copy** — appeal text and real impact figures
 - **Contact** — public email, phone, mailing address, and a form endpoint (see below)
-- **Footer** — funder acknowledgement language, if your grants require it
 
 ### Contact form
 
