@@ -13,7 +13,7 @@ and straightforward to port into Wix later.
 | `restoration.html` | Methods, microfragmentation, outplanting, Rescue to Reef, the 8 coral species |
 | `additional-projects.html` | Projects beyond the nurseries — currently the artificial reef |
 | `where-we-work.html` | Interactive Leaflet map of 24 field sites + site index |
-| `get-involved.html` | Be a Reef Responder, sign-up, partners, downloads |
+| `get-involved.html` | Ways to help (report, donate, partner), partners, downloads |
 | `donate.html` | Appeal, impact tiers, giving options (→ GiveSmart) |
 | `contact.html` | Contact form, contact details, partners |
 
