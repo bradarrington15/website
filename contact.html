@@ -68,11 +68,11 @@
 
              UNTIL THEN: GitHub Pages cannot process form submissions, so the script
              intercepts submit and opens the visitor's mail client with the fields
-             pre-filled, addressed to vireefresponse@gmail.com. Nothing is silently
+             pre-filled, addressed to reefresponse@uvi.edu. Nothing is silently
              discarded. To use a real endpoint instead (e.g. Formspree), put it in
              the action below and delete the script.
              ───────────────────────────────────────────────────────────────────────── -->
-        <form class="form" id="contact-form" action="mailto:vireefresponse@gmail.com" method="POST"
+        <form class="form" id="contact-form" action="mailto:reefresponse@uvi.edu" method="POST"
               enctype="text/plain">
           <div class="field">
             <label for="name">Name</label>
@@ -101,7 +101,7 @@
           </div>
           <p class="form__note">Submitting opens your email app with this message ready to send.
             You can also write to us directly at
-            <a href="mailto:vireefresponse@gmail.com">vireefresponse@gmail.com</a>.</p>
+            <a href="mailto:reefresponse@uvi.edu">reefresponse@uvi.edu</a>.</p>
         </form>
 
         <div class="callout callout--aqua" style="margin-top:2rem">
@@ -115,7 +115,7 @@
         <div class="card card--sand">
           <h3>Reef Response</h3>
           <ul style="list-style:none;padding:0;margin:1.25rem 0 0;display:grid;gap:1.15rem">
-            <li><strong>Email</strong><br><a href="mailto:vireefresponse@gmail.com">vireefresponse@gmail.com</a></li>
+            <li><strong>Email</strong><br><a href="mailto:reefresponse@uvi.edu">reefresponse@uvi.edu</a></li>
             <li><strong>Phone</strong><br><span class="todo">Add phone number</span></li>
             <li><strong>Address</strong><br>
               Center for Marine and Environmental Studies<br>
@@ -190,7 +190,7 @@
           <li><a href="about.html#report">Report coral bleaching</a></li>
           <li><a href="donate.html">Make a donation</a></li>
           <li><a href="contact.html">Contact us</a></li>
-          <li><a href="mailto:vireefresponse@gmail.com">vireefresponse@gmail.com</a></li>
+          <li><a href="mailto:reefresponse@uvi.edu">reefresponse@uvi.edu</a></li>
         </ul>
       </div>
       <div>
@@ -223,7 +223,7 @@
     var subject = '[' + v('topic') + '] ' + v('name');
     var body = 'Name: ' + v('name') + '\nEmail: ' + v('email') +
                '\nTopic: ' + v('topic') + '\n\n' + v('message');
-    window.location.href = 'mailto:vireefresponse@gmail.com' +
+    window.location.href = 'mailto:reefresponse@uvi.edu' +
       '?subject=' + encodeURIComponent(subject) +
       '&body=' + encodeURIComponent(body);
   });
