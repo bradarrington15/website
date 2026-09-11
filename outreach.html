@@ -3,17 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Where We Work | VI Reef Response</title>
-<meta name="description" content="The coral nurseries, outplanting sites, and monitoring locations Reef Response works across St. Thomas and St. John, U.S. Virgin Islands.">
-<meta property="og:title" content="Where We Work | VI Reef Response">
-<meta property="og:description" content="The coral nurseries, outplanting sites, and monitoring locations Reef Response works across St. Thomas and St. John, U.S. Virgin Islands.">
+<title>Outreach | VI Reef Response</title>
+<meta name="description" content="Reef Response outreach and education, including Corals in the Classroom — our partnership with high school biology teachers bringing coral reef ecology lessons into USVI classrooms.">
+<meta property="og:title" content="Outreach | VI Reef Response">
+<meta property="og:description" content="Reef Response outreach and education, including Corals in the Classroom — our partnership with high school biology teachers bringing coral reef ecology lessons into USVI classrooms.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="images/logo.png">
 <link rel="icon" href="favicon.png" type="image/png">
-<link rel="preload" as="image" href="images/photos/hero-map.jpg">
+<link rel="preload" as="image" href="images/photos/hero-donate.jpg">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
@@ -33,8 +31,8 @@
         <a href="about.html">About Us</a>
         <a href="restoration.html">Restoration</a>
         <a href="additional-projects.html">Additional Projects</a>
-        <a href="outreach.html">Outreach</a>
-        <a href="where-we-work.html" aria-current="page">Where We Work</a>
+        <a href="outreach.html" aria-current="page">Outreach</a>
+        <a href="where-we-work.html">Where We Work</a>
         <a href="get-involved.html">Get Involved</a>
         <a href="contact.html">Contact</a>
         <a class="btn" href="donate.html">Donate</a>
@@ -43,78 +41,126 @@
 </header>
 
 <main id="main">
-
 <section class="hero hero--page">
+  <!-- TODO: swap for a classroom photo once you have one (see the note in the program section). -->
   <div class="hero__media hero__media--photo" role="presentation"
-       style="background-image:url('images/photos/hero-map.jpg')"></div>
+       style="background-image:url('images/photos/hero-donate.jpg')"></div>
   <div class="wrap hero__inner">
-    <span class="eyebrow" style="color:#7FE3DC">On the map</span>
-    <h1>Where we work</h1>
-    <p class="hero__text">Nurseries, outplanting sites, and monitoring stations across
-      St.&nbsp;Thomas, St.&nbsp;John, and the surrounding cays.</p>
+    <span class="eyebrow" style="color:#7FE3DC">Outreach &amp; education</span>
+    <h1>Outreach</h1>
+    <p class="hero__text">Sharing coral reef science with the next generation of Virgin Islanders
+      &mdash; in classrooms, at public events, and out on the reef.</p>
   </div>
 </section>
 
-<section class="section section--tight">
+<section class="section" id="corals-in-the-classroom">
   <div class="wrap">
-<!-- TODO CONTENT -->
-<div class="todo-block"><strong>Needs content — Short intro paragraph (~30 words)</strong><p>Replace the paragraph below with your own copy describing the geographic scope of the program.</p></div>
-    <p class="lede narrow" style="margin:1.5rem 0 2rem">Reef Response works at
-      <strong>24 locations</strong> around the U.S. Virgin Islands &mdash; from the land-based
-      nursery at UVI&rsquo;s Center for Marine and Environmental Studies to in-water nurseries,
-      outplanting sites, and long-term monitoring reefs across two islands.</p>
-
-    <div id="map" role="application" aria-label="Map of Reef Response field sites"></div>
-    <div class="map-legend">
-      <span><i style="background:#C92838"></i> Facility, land-based nursery &amp; artificial reef</span>
-      <span><i style="background:#1F8F8A"></i> Field site</span>
-      <span style="color:#8A6A00"><span class="todo">TODO</span> &nbsp;set each site's type in <code>js/sites.js</code></span>
+    <div class="feature">
+      <div>
+        <span class="eyebrow">A growing program</span>
+        <hr class="rule">
+        <h2>Corals in the Classroom</h2>
+        <p class="lede">We partner with local high school biology teachers to bring coral reef
+          ecology straight into USVI classrooms.</p>
+        <p>Reef Response scientists visit partner schools and teach lessons on coral reef ecology
+          &mdash; connecting what students learn in biology class to the reefs just offshore, and to
+          the restoration work happening on them.</p>
+        <p>The program is growing, and we&rsquo;re looking to reach more classrooms across the
+          territory.</p>
+        <!-- TODO: add specifics when you have them -->
+        <div class="todo-block" style="margin-top:1.5rem">
+          <strong>Needs content &mdash; program details</strong>
+          <p>When the program started, how many schools and students it has reached, which grades,
+            and which islands. Partner schools can be named here if they&rsquo;re happy to be.</p>
+        </div>
+      </div>
+      <div class="feature__media">
+        <!-- TODO IMAGE: classroom session. Make sure you have photo consent for any students shown,
+             or use a shot that keeps students unidentifiable. -->
+        <div class="ph ph--wide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h3l2-2h8l2 2h3v12H3z" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5"/></svg><b>Photo placeholder</b><span>A Corals in the Classroom lesson in progress. Check photo consent for any students shown.</span></div>
+      </div>
     </div>
-    <noscript>
-      <p class="callout callout--aqua" style="margin-top:1.5rem">The interactive map needs
-        JavaScript. All site names are listed below.</p>
-    </noscript>
   </div>
 </section>
 
-<section class="section section--sand">
+<section class="section section--sand" id="lessons">
   <div class="wrap">
     <div class="narrow" style="margin-bottom:2.5rem">
-      <span class="eyebrow">Site index</span>
-      <h2>All field sites</h2>
+      <span class="eyebrow">In the classroom</span>
+      <h2>What the lessons cover</h2>
+      <hr class="rule">
+      <p class="lede">Lessons focus on coral reef ecology &mdash; what corals are, how reefs work,
+        and why they matter to life in the Virgin Islands.</p>
+    </div>
+    <!-- TODO: replace with your actual lesson list — one card per lesson or unit. -->
+    <div class="todo-block">
+      <strong>Needs content &mdash; lesson list</strong>
+      <p>List the lessons or units you teach, with a sentence on each. If any include hands-on
+        activities, a lab, or a field component, say so &mdash; teachers look for exactly that.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="teachers">
+  <div class="wrap narrow">
+    <span class="eyebrow">For teachers</span>
+    <h2>Bring Corals in the Classroom to your students</h2>
+    <hr class="rule">
+    <p class="lede">Teach high school biology in the U.S.&nbsp;Virgin Islands? We&rsquo;d love to
+      hear from you.</p>
+    <p>Email us with your school, your grade levels, and roughly when in the year a visit would fit
+      your curriculum, and we&rsquo;ll be in touch.</p>
+    <div class="btn-row">
+      <a class="btn btn--lg" href="mailto:reefresponse@uvi.edu?subject=Corals%20in%20the%20Classroom">Email us about a classroom visit</a>
+    </div>
+    <p class="form__note" style="margin-top:1rem">Our field guides are free to use in class &mdash;
+      find them under <a href="get-involved.html#resources">Guides &amp; downloads</a>.</p>
+  </div>
+</section>
+
+<section class="section section--sand" id="community">
+  <div class="wrap">
+    <div class="narrow" style="margin-bottom:2.5rem">
+      <span class="eyebrow">In the community</span>
+      <h2>Beyond the classroom</h2>
       <hr class="rule">
     </div>
-    <div class="grid grid--4">
-      <div>
-        <h3>St. Thomas — South Shore</h3>
-        <ul class="sitelist" style="columns:1"><li>Center for Marine and Environmental Studies</li><li>Brewers</li><li>Fortuna</li><li>Artificial Reef</li><li>Perseverance</li><li>Range Cay</li><li>Flat Cay — Leeward</li><li>Flat Cay — Windward</li><li>South Capella</li><li>Rupert's Rock</li></ul>
-      </div>
-      <div>
-        <h3>St. Thomas — North Shore</h3>
-        <ul class="sitelist" style="columns:1"><li>Hull Bay</li><li>Peterborg</li><li>Stumpy</li><li>Coki</li></ul>
-      </div>
-      <div>
-        <h3>East End Cays</h3>
-        <ul class="sitelist" style="columns:1"><li>Great St. James</li><li>Cow and Calf Rocks</li><li>Stragglers</li><li>Lovango</li><li>Henry's Reef</li><li>Murder Rock</li></ul>
-      </div>
-      <div>
-        <h3>St. John</h3>
-        <ul class="sitelist" style="columns:1"><li>Waterlemon Cay</li><li>Leinster</li><li>Mary Creek</li><li>Yawzi Point</li></ul>
-      </div>
+    <div class="grid grid--3">
+      <article class="card">
+        <h3>Talks &amp; public events</h3>
+        <p>We raise awareness of coral restoration through presentations and public events around
+          the territory. Follow us on social media to hear about the next one.</p>
+      </article>
+      <article class="card">
+        <h3>Signage on the reef</h3>
+        <p>Educational signage on Lovango&nbsp;Cay explains our Rescue to Reef restoration site to
+          the divers and snorkelers who visit it.</p>
+        <div class="btn-row"><a class="btn btn--outline" href="restoration.html#rescue-to-reef">About Rescue to Reef</a></div>
+      </article>
+      <article class="card">
+        <h3>Report what you see</h3>
+        <p>Anyone on the water can help monitor our reefs by reporting bleaching, disease, or
+          damage through our Coral Health Reporting Form.</p>
+        <div class="btn-row"><a class="btn btn--outline" href="about.html#report">How to report</a></div>
+      </article>
     </div>
+    <p class="narrow" style="margin-top:2rem">Our outreach is led by Chlo&eacute; Camacho, Education
+      and Outreach Coordinator. <a href="about.html#team">Meet the team &rarr;</a></p>
   </div>
 </section>
 
 <section class="section cta">
   <div class="wrap">
-    <h2>Seen something on these reefs?</h2>
-    <p>If you notice bleaching, disease, or damage while diving or snorkeling here, tell us where
-      and what you saw.</p>
+    <h2>Invest in the next generation</h2>
+    <p>Classroom visits, materials, and outreach events are funded by people who care about the
+      future of our reefs.</p>
     <div class="btn-row">
-      <a class="btn btn--lg" href="https://survey123.arcgis.com/share/9838819b5e1748448297255f6fd1a183" rel="noopener">Submit a coral health report</a>
+      <a class="btn btn--lg" href="donate.html">Donate</a>
+      <a class="btn btn--lg btn--ghost" href="contact.html">Contact us</a>
     </div>
   </div>
 </section>
+
 </main>
 
 <footer class="site-footer">
@@ -175,47 +221,5 @@
 
 <script src="js/main.js"></script>
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script src="js/sites.js"></script>
-<script>
-(function () {
-  if (typeof L === 'undefined' || !document.getElementById('map')) return;
-
-  var map = L.map('map', { scrollWheelZoom: false });
-
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> ' +
-                 'contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    maxZoom: 19
-  }).addTo(map);
-
-  var group = L.featureGroup();
-
-  REEF_SITES.forEach(function (s) {
-    var facility = s.type === 'facility';
-    L.circleMarker([s.lat, s.lng], {
-      radius: facility ? 9 : 7,
-      color: '#fff',
-      weight: 2,
-      fillColor: facility ? '#C92838' : '#1F8F8A',
-      fillOpacity: 0.95
-    })
-      .bindPopup('<b>' + s.name + '</b>' + s.region)
-      .bindTooltip(s.name, { direction: 'top', offset: [0, -8] })
-      .addTo(group);
-  });
-
-  group.addTo(map);
-  map.fitBounds(group.getBounds(), { padding: [40, 40] });
-
-  // Re-measure once the container has settled (fonts, late layout, hidden-then-shown panes)
-  window.addEventListener('load', function () { map.invalidateSize(); });
-
-  // Scroll-wheel zoom only once the user has clicked into the map
-  map.on('focus', function () { map.scrollWheelZoom.enable(); });
-  map.on('blur',  function () { map.scrollWheelZoom.disable(); });
-})();
-</script>
 </body>
 </html>
