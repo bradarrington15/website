@@ -140,7 +140,7 @@ p:last-child{margin-bottom:0}
              radial-gradient(ellipse 35% 30% at 78% 30%,#4FC3E8 0%,transparent 62%),
              radial-gradient(ellipse 45% 25% at 50% 85%,#2AA5A0 0%,transparent 65%);
 }
-.hero__inner{position:relative;padding:clamp(4.5rem,13vw,9.5rem) 0 clamp(3.5rem,9vw,6rem)}
+.hero__inner{position:relative;padding-block:clamp(4.5rem,13vw,9.5rem) clamp(3.5rem,9vw,6rem)}
 .hero h1{color:#fff;margin-bottom:.35em;text-shadow:0 2px 24px rgba(0,0,0,.3)}
 .hero h1 em{font-style:normal;color:var(--red);display:block}
 .hero__motto{
@@ -148,7 +148,7 @@ p:last-child{margin-bottom:0}
   font-size:clamp(1.15rem,2.6vw,1.6rem);color:#7FE3DC;margin:-.1em 0 1.1rem;
 }
 .hero__text{max-width:660px;font-size:clamp(1.08rem,2vw,1.3rem);line-height:1.6;color:#DDEAEE}
-.hero--page .hero__inner{padding:clamp(3rem,7vw,5rem) 0 clamp(2.5rem,5vw,3.5rem)}
+.hero--page .hero__inner{padding-block:clamp(3rem,7vw,5rem) clamp(2.5rem,5vw,3.5rem)}
 .hero--page h1{font-size:clamp(2.2rem,5.5vw,3.8rem)}
 
 /* --- Grids & cards ------------------------------------------------------- */
