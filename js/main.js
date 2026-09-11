@@ -26,3 +26,15 @@
     }
   });
 })();
+
+/* Before/after compare sliders: the transparent range input drives --pos, so
+   mouse, touch and keyboard all work natively. */
+(function () {
+  document.querySelectorAll('.compare').forEach(function (el) {
+    var range = el.querySelector('.compare__range');
+    if (!range) return;
+    var set = function () { el.style.setProperty('--pos', range.value + '%'); };
+    range.addEventListener('input', set);
+    set();
+  });
+})();
