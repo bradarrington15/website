@@ -73,8 +73,6 @@ Outstanding items:
 - **Donation figures** (`donate.html`) — the three impact tiers still read `$__`
 - **Other giving options** (`donate.html`) — gifts by check, in-kind donations, corporate
   sponsorship, and any tax-deductibility / EIN wording
-- **Founder headshots** — Alex Gutting and Kristen Ewen render as initials, as does alumnus
-  Adam Glahn; drop files into `images/team/` and swap the `.member__avatar` div for an `<img>`
 - **Partners** — one spare "Add partner" tile remains on Get Involved and Contact
 
 ### Contact form
