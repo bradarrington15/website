@@ -70,25 +70,23 @@ grep -rn "TODO" --include="*.html" .
 
 Outstanding items:
 
-- **Photography** — every `.ph` placeholder needs a real photo (hero shots, nursery, outplanting,
-  microfragments, each of the 8 species, ID tips)
-- **Team** — job titles for all 8 members; bios optional
-- **History timeline** (`index.html`) — milestone years and descriptions
-- **Coral health report** — the survey URL for the "Submit a report" button
-- **Sick coral ID tips** (`about.html`) — intro paragraph and 4 tips
-- **Reef Responder program** (`get-involved.html`) — eligibility, commitment, training, cost
-- **Volunteer contact** — coordinator email/phone or sign-up form
-- **Partners** — full dive shop and community partner list with links
-- **Downloads** — add PDFs to a `downloads/` folder (the Nursery Maintenance Guidebook is ready)
-- **Donation copy** — appeal text and real impact figures
-- **Contact** — public email, phone, mailing address, and a form endpoint (see below)
+- **Donation figures** (`donate.html`) — the three impact tiers still read `$__`
+- **Other giving options** (`donate.html`) — gifts by check, in-kind donations, corporate
+  sponsorship, and any tax-deductibility / EIN wording
+- **Founder headshots** — Alex Gutting and Kristen Ewen render as initials, as does alumnus
+  Adam Glahn; drop files into `images/team/` and swap the `.member__avatar` div for an `<img>`
+- **Partners** — one spare "Add partner" tile remains on Get Involved and Contact
 
 ### Contact form
 
-GitHub Pages can't process form submissions. Either create a free
-[Formspree](https://formspree.io) form and paste the endpoint into the `action` in
-`contact.html`, or delete the form and use a `mailto:` link. Wix has its own form widget, so
-this only needs a stopgap until the port.
+GitHub Pages can't process form submissions. The form on `contact.html` therefore has a small
+script at the bottom of that page which intercepts submit and composes a `mailto:` to
+reefresponse@uvi.edu from the fields, so nothing a visitor writes is silently discarded.
+
+At the Wix port, replace the `<form>` with a Wix Forms element and delete that script. To use a
+real endpoint before then (e.g. [Formspree](https://formspree.io)), put it in the form's `action`
+and delete the script.
+
 
 ## Porting to Wix
 
