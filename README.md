@@ -70,10 +70,15 @@ grep -rn "TODO" --include="*.html" .
 
 Outstanding items:
 
-- **Donation figures** (`donate.html`) — the three impact tiers still read `$__`
-- **Other giving options** (`donate.html`) — gifts by check, in-kind donations, corporate
-  sponsorship, and any tax-deductibility / EIN wording
-- **Partners** — one spare "Add partner" tile remains on Get Involved and Contact
+- **Donate** (`donate.html`) — the page still shows placeholders to visitors: the appeal copy, the
+  impact examples, three `$__` tiers, a note to confirm the recurring option in GiveSmart, and the
+  other-giving-options box (cheques, in-kind gifts, sponsorship, tax-deductibility / EIN wording)
+- **Partners** — a "Partner list" box on Get Involved, plus an "Add partner" tile there and on
+  Contact
+- **Additional Projects** — a deliberate "add the next project" marker, showing where a second
+  project section goes
+
+Find them all with `grep -rn "class=\"todo" --include="*.html" .`
 
 ### Contact form
 
