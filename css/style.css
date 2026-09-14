@@ -332,6 +332,7 @@ p:last-child{margin-bottom:0}
 .map-legend span{display:flex;align-items:center;gap:.45rem}
 .map-legend i{width:13px;height:13px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.25)}
 .sitelist{columns:3 200px;column-gap:2rem;list-style:none;margin:0;padding:0;font-size:.94rem}
+.sitelist__kind{display:block;font-size:.78rem;color:var(--muted)}
 .sitelist li{break-inside:avoid;padding:.35rem 0;border-bottom:1px solid var(--line)}
 
 /* --- Timeline ------------------------------------------------------------ */

@@ -71,8 +71,12 @@
     <div id="map" role="application" aria-label="Map of Reef Response field sites"></div>
     <!-- Marker colour comes from each site's "type" in js/sites.js: "facility" = red, "site" = teal. -->
     <div class="map-legend">
-      <span><i style="background:#C92838"></i> Facility, land-based nursery &amp; artificial reef</span>
-      <span><i style="background:#1F8F8A"></i> Field site</span>
+      <span><i style="background:#C92838"></i> Land-based nursery</span>
+      <span><i style="background:#F2B33D"></i> In-water nursery</span>
+      <span><i style="background:#3FBF6F"></i> Primary restoration</span>
+      <span><i style="background:#4DA3FF"></i> Research restoration</span>
+      <span><i style="background:#B9C3C7"></i> Field site</span>
+      <span><i style="background:#4DA3FF;box-shadow:inset 0 0 0 2px #fff"></i> White centre &middot; spawning hub</span>
     </div>
     <noscript>
       <p class="callout callout--aqua" style="margin-top:1.5rem">The interactive map needs
@@ -91,19 +95,19 @@
     <div class="grid grid--4">
       <div>
         <h3>St. Thomas — South Shore</h3>
-        <ul class="sitelist" style="columns:1"><li>Center for Marine and Environmental Studies</li><li>Brewers</li><li>Fortuna</li><li>Artificial Reef</li><li>Perseverance</li><li>Range Cay</li><li>Flat Cay — Leeward</li><li>Flat Cay — Windward</li><li>South Capella</li><li>Rupert's Rock</li></ul>
+        <ul class="sitelist" style="columns:1"><li>Center for Marine and Environmental Studies <span class="sitelist__kind">Land-based nursery</span></li><li>Brewers <span class="sitelist__kind">Field site</span></li><li>Fortuna <span class="sitelist__kind">Research restoration</span></li><li>Artificial Reef <span class="sitelist__kind">Research restoration</span></li><li>Perseverance <span class="sitelist__kind">Research restoration &middot; spawning hub</span></li><li>Range Cay <span class="sitelist__kind">In-water nursery &middot; spawning hub</span></li><li>Flat Cay — Leeward <span class="sitelist__kind">Primary restoration</span></li><li>Flat Cay — Windward <span class="sitelist__kind">Primary restoration</span></li><li>South Capella <span class="sitelist__kind">Research restoration</span></li><li>Rupert's Rock <span class="sitelist__kind">Field site</span></li></ul>
       </div>
       <div>
         <h3>St. Thomas — North Shore</h3>
-        <ul class="sitelist" style="columns:1"><li>Hull Bay</li><li>Peterborg</li><li>Stumpy</li><li>Coki</li></ul>
+        <ul class="sitelist" style="columns:1"><li>Hull Bay <span class="sitelist__kind">Primary restoration</span></li><li>Peterborg <span class="sitelist__kind">Field site</span></li><li>Stumpy <span class="sitelist__kind">Research restoration</span></li><li>Coki <span class="sitelist__kind">Field site</span></li></ul>
       </div>
       <div>
         <h3>East End Cays</h3>
-        <ul class="sitelist" style="columns:1"><li>Great St. James</li><li>Cow and Calf Rocks</li><li>Stragglers</li><li>Lovango</li><li>Henry's Reef</li><li>Murder Rock</li></ul>
+        <ul class="sitelist" style="columns:1"><li>Great St. James <span class="sitelist__kind">In-water nursery</span></li><li>Cow and Calf Rocks <span class="sitelist__kind">Field site</span></li><li>Stragglers <span class="sitelist__kind">Field site</span></li><li>Lovango <span class="sitelist__kind">In-water nursery</span></li><li>Henry's Reef <span class="sitelist__kind">Primary restoration</span></li><li>Murder Rock <span class="sitelist__kind">Field site</span></li></ul>
       </div>
       <div>
         <h3>St. John</h3>
-        <ul class="sitelist" style="columns:1"><li>Waterlemon Cay</li><li>Leinster</li><li>Mary Creek</li><li>Yawzi Point</li></ul>
+        <ul class="sitelist" style="columns:1"><li>Waterlemon Cay <span class="sitelist__kind">Primary restoration</span></li><li>Leinster <span class="sitelist__kind">Primary restoration</span></li><li>Mary Creek <span class="sitelist__kind">Primary restoration</span></li><li>Yawzi Point <span class="sitelist__kind">Primary restoration</span></li></ul>
       </div>
     </div>
   </div>
@@ -204,18 +208,29 @@
 
   var group = L.featureGroup();
 
+  var COLOR = {land:'#C92838', water:'#F2B33D', primary:'#3FBF6F', research:'#4DA3FF', other:'#B9C3C7'};
+  var LABEL = {land:'Land-based nursery', water:'In-water nursery', primary:'Primary restoration',
+               research:'Research restoration', other:'Field site'};
+
   REEF_SITES.forEach(function (s) {
-    var facility = s.type === 'facility';
+    var fill = COLOR[s.type] || COLOR.other;
+    var label = LABEL[s.type] || LABEL.other;
+    var kind = label + (s.spawning ? ' &middot; spawning hub' : '');
+
     L.circleMarker([s.lat, s.lng], {
-      radius: facility ? 9 : 7,
-      color: '#fff',
-      weight: 2,
-      fillColor: facility ? '#C92838' : '#1F8F8A',
-      fillOpacity: 0.95
+      radius: s.type === 'land' ? 9 : 7,
+      color: '#fff', weight: 2, fillColor: fill, fillOpacity: 0.95
     })
-      .bindPopup('<b>' + s.name + '</b>' + s.region)
+      .bindPopup('<b>' + s.name + '</b>' + kind + '<br>' + s.region)
       .bindTooltip(s.name, { direction: 'top', offset: [0, -8] })
       .addTo(group);
+
+    // spawning hubs carry a white centre
+    if (s.spawning) {
+      L.circleMarker([s.lat, s.lng], {
+        radius: 2.5, color: '#fff', weight: 0, fillColor: '#fff', fillOpacity: 1, interactive: false
+      }).addTo(group);
+    }
   });
 
   group.addTo(map);
