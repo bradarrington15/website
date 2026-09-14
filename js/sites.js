@@ -1,7 +1,7 @@
 /* Reef Response field sites.
    type: "land" land-based nursery | "water" in-water nursery |
          "primary" primary restoration | "research" research restoration |
-         "other" not yet categorised
+         "auxiliary" auxiliary restoration
    spawning: true marks a spawning hub (drawn with a white centre). */
 var REEF_SITES = [
   {
@@ -17,7 +17,7 @@ var REEF_SITES = [
     "lat": 18.34459,
     "lng": -64.98359,
     "region": "St. Thomas — South Shore",
-    "type": "other",
+    "type": "auxiliary",
     "spawning": false
   },
   {
@@ -81,7 +81,7 @@ var REEF_SITES = [
     "lat": 18.3272,
     "lng": -64.92625,
     "region": "St. Thomas — South Shore",
-    "type": "other",
+    "type": "auxiliary",
     "spawning": false
   },
   {
@@ -97,7 +97,7 @@ var REEF_SITES = [
     "lat": 18.37781,
     "lng": -64.93701,
     "region": "St. Thomas — North Shore",
-    "type": "other",
+    "type": "auxiliary",
     "spawning": false
   },
   {
@@ -113,7 +113,7 @@ var REEF_SITES = [
     "lat": 18.35018,
     "lng": -64.86515,
     "region": "St. Thomas — North Shore",
-    "type": "other",
+    "type": "auxiliary",
     "spawning": false
   },
   {
@@ -129,7 +129,7 @@ var REEF_SITES = [
     "lat": 18.30423,
     "lng": -64.84668,
     "region": "East End Cays",
-    "type": "other",
+    "type": "auxiliary",
     "spawning": false
   },
   {
@@ -137,7 +137,7 @@ var REEF_SITES = [
     "lat": 18.30304,
     "lng": -64.83612,
     "region": "East End Cays",
-    "type": "other",
+    "type": "auxiliary",
     "spawning": false
   },
   {
@@ -161,7 +161,7 @@ var REEF_SITES = [
     "lat": 18.35965,
     "lng": -64.80264,
     "region": "East End Cays",
-    "type": "other",
+    "type": "auxiliary",
     "spawning": false
   },
   {
