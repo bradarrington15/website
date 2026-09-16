@@ -164,7 +164,7 @@ p:last-child{margin-bottom:0}
   font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.14em;
   font-size:clamp(1.15rem,2.6vw,1.6rem);color:#7FE3DC;margin:-.1em 0 1.1rem;
 }
-.hero__motto a{color:inherit;text-decoration:none;border-bottom:2px solid transparent;transition:border-color .2s,color .2s}
+.hero__motto a{color:#7FE3DC;text-decoration:none;border-bottom:2px solid transparent;transition:border-color .2s,color .2s}
 .hero__motto a:hover,.hero__motto a:focus-visible{color:#fff;border-bottom-color:currentColor}
 .hero__text{max-width:660px;font-size:clamp(1.08rem,2vw,1.3rem);line-height:1.6;color:#DDEAEE}
 .hero--page .hero__inner{padding-block:clamp(3rem,7vw,5rem) clamp(2.5rem,5vw,3.5rem)}
