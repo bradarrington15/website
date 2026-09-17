@@ -234,7 +234,10 @@
   });
 
   group.addTo(map);
+  // Fit to the sites, then back off one step: the imagery one zoom level out is
+  // noticeably clearer (fewer clouds and patched tiles) over these islands.
   map.fitBounds(group.getBounds(), { padding: [40, 40] });
+  map.setView(group.getBounds().getCenter(), Math.max(map.getZoom() - 1, map.getMinZoom()));
 
   // Re-measure once the container has settled (fonts, late layout, hidden-then-shown panes)
   window.addEventListener('load', function () { map.invalidateSize(); });
