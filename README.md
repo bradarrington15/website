@@ -72,15 +72,33 @@ grep -rn "TODO" --include="*.html" .
 
 Outstanding items:
 
-- **Donate** (`donate.html`) — the page still shows placeholders to visitors: the appeal copy, the
-  impact examples, three `$__` tiers, a note to confirm the recurring option in GiveSmart, and the
-  other-giving-options box (cheques, in-kind gifts, sponsorship, tax-deductibility / EIN wording)
+- **Donate** (`donate.html`) — the other-giving-options box (cheques, in-kind gifts, sponsorship,
+  tax-deductibility / EIN wording)
+- **Site media** — every site on the map shows a "360° tour coming soon" placeholder until it has a
+  `photo` or a `video360` in `js/sites.js` (see below)
 - **Partners** — a "Partner list" box on Get Involved, plus an "Add partner" tile there and on
   Contact
 - **Additional Projects** — a deliberate "add the next project" marker, showing where a second
   project section goes
 
 Find them all with `grep -rn "class=\"todo" --include="*.html" .`
+
+### Site media on the map
+
+Clicking a marker — or a site name in the index — zooms the map to that location and opens a panel
+underneath it. The panel's media slot is driven by two optional fields on each site in
+`js/sites.js`:
+
+```js
+{ name: "Hull Bay", lat: 18.37, lng: -64.95, region: "St. Thomas — North Shore",
+  type: "primary", spawning: false,
+  photo: "images/site/hull-bay.jpg",   // a still of the site
+  video360: "dQw4w9WgXcQ" }            // a YouTube video id for a 360 tour
+```
+
+`video360` wins when both are set. Upload the 360 footage to YouTube — it reads the camera's 360
+metadata and serves the drag-to-look player, on phones too — then paste the id from the watch URL
+(`youtube.com/watch?v=THIS_PART`). A site with neither field shows the placeholder.
 
 ### Contact form
 

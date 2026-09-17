@@ -69,7 +69,6 @@
       outplanting sites, and long-term monitoring reefs across two islands.</p>
 
     <div id="map" role="application" aria-label="Map of Reef Response field sites"></div>
-    <!-- Marker colour comes from each site's "type" in js/sites.js: "facility" = red, "site" = teal. -->
     <div class="map-legend">
       <span><i style="background:#C92838"></i> Land-based nursery</span>
       <span><i style="background:#F2B33D"></i> In-water nursery</span>
@@ -78,6 +77,10 @@
       <span><i style="background:#B9C3C7"></i> Auxiliary restoration</span>
       <span><i style="background:#4DA3FF;box-shadow:inset 0 0 0 2px #fff"></i> White centre &middot; spawning hub</span>
     </div>
+
+    <div id="site-detail" class="site-detail" hidden aria-live="polite"></div>
+    <p class="map-hint">Select a marker &mdash; or any site in the index below &mdash; to zoom in and
+      see that location.</p>
     <noscript>
       <p class="callout callout--aqua" style="margin-top:1.5rem">The interactive map needs
         JavaScript. All site names are listed below.</p>
@@ -221,8 +224,8 @@
       radius: s.type === 'land' ? 9 : 7,
       color: '#fff', weight: 2, fillColor: fill, fillOpacity: 0.95
     })
-      .bindPopup('<b>' + s.name + '</b>' + kind + '<br>' + s.region)
       .bindTooltip(s.name, { direction: 'top', offset: [0, -8] })
+      .on('click', function () { showSite(s); })
       .addTo(group);
 
     // spawning hubs carry a white centre
@@ -238,6 +241,74 @@
   // noticeably clearer (fewer clouds and patched tiles) over these islands.
   map.fitBounds(group.getBounds(), { padding: [40, 40] });
   map.setView(group.getBounds().getCenter(), Math.max(map.getZoom() - 1, map.getMinZoom()));
+
+  var HOME = { center: map.getCenter(), zoom: map.getZoom() };
+  var SITE_ZOOM = 17;
+  var detail = document.getElementById('site-detail');
+
+  function esc(t) {
+    return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;');
+  }
+
+  // Media slot: a 360 tour when the site has one, a still photo when it has one,
+  // and a placeholder until either is shot.
+  function media(s) {
+    if (s.video360) {
+      return '<div class="site-detail__media site-detail__media--video">' +
+        '<iframe src="https://www.youtube-nocookie.com/embed/' + esc(s.video360) + '?rel=0" ' +
+        'title="360&deg; tour of ' + esc(s.name) + '" frameborder="0" loading="lazy" ' +
+        'allow="accelerometer; gyroscope; encrypted-media; fullscreen; picture-in-picture" ' +
+        'allowfullscreen></iframe></div>';
+    }
+    if (s.photo) {
+      return '<div class="site-detail__media"><img src="' + esc(s.photo) + '" alt="' +
+        esc(s.name) + '" loading="lazy" decoding="async"></div>';
+    }
+    return '<div class="site-detail__media ph"><b>360&deg; tour coming soon</b>' +
+      '<span>We are filming each site in 360&deg;. Until then, the map is the tour.</span></div>';
+  }
+
+  function showSite(s) {
+    map.flyTo([s.lat, s.lng], SITE_ZOOM, { duration: 1.2 });
+    detail.innerHTML =
+      '<div class="site-detail__body">' +
+        '<span class="eyebrow">' + LABEL[s.type] + (s.spawning ? ' &middot; spawning hub' : '') + '</span>' +
+        '<h3>' + esc(s.name) + '</h3>' +
+        '<p class="site-detail__region">' + esc(s.region) + '</p>' +
+        '<button type="button" class="btn btn--outline btn--sm" data-map-home>Back to all sites</button>' +
+      '</div>' + media(s);
+    detail.hidden = false;
+    detail.querySelector('[data-map-home]').addEventListener('click', resetMap);
+  }
+
+  function resetMap() {
+    detail.hidden = true;
+    detail.innerHTML = '';
+    map.flyTo(HOME.center, HOME.zoom, { duration: 1 });
+    map.closePopup();
+  }
+
+  // The site index doubles as a set of map controls.
+  var byName = {};
+  REEF_SITES.forEach(function (s) { byName[s.name.toLowerCase()] = s; });
+
+  document.querySelectorAll('.sitelist li').forEach(function (li) {
+    var kind = li.querySelector('.sitelist__kind');
+    var name = (li.childNodes[0] && li.childNodes[0].textContent || '').trim();
+    var s = byName[name.toLowerCase()];
+    if (!s) return;
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'sitelist__btn';
+    btn.textContent = name;
+    li.replaceChild(btn, li.childNodes[0]);
+    btn.addEventListener('click', function () {
+      showSite(s);
+      document.getElementById('map').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+    if (kind) { kind.setAttribute('aria-hidden', 'true'); }
+  });
 
   // Re-measure once the container has settled (fonts, late layout, hidden-then-shown panes)
   window.addEventListener('load', function () { map.invalidateSize(); });

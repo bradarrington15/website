@@ -2,7 +2,10 @@
    type: "land" land-based nursery | "water" in-water nursery |
          "primary" primary restoration | "research" research restoration |
          "auxiliary" auxiliary restoration
-   spawning: true marks a spawning hub (drawn with a white centre). */
+   spawning: true marks a spawning hub (drawn with a white centre).
+   Optional per site, shown in the panel under the map when present:
+     photo: "images/site/<file>.jpg" a still of the site
+     video360: a YouTube video id for a 360 tour, e.g. "dQw4w9WgXcQ" */
 var REEF_SITES = [
   {
     "name": "Center for Marine and Environmental Studies",
