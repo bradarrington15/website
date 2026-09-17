@@ -407,6 +407,7 @@ p:last-child{margin-bottom:0}
 /* --- Utility ------------------------------------------------------------- */
 .mt-0{margin-top:0}.mb-0{margin-bottom:0}
 .center{text-align:center}
+.center.narrow,.narrow.center{margin-inline:auto}
 .center .rule{margin-inline:auto}
 .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
