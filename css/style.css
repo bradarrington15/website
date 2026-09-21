@@ -293,6 +293,11 @@ p:last-child{margin-bottom:0}
 .spec__label{font-size:.78rem;color:#A9C6CD;margin-top:.35rem;line-height:1.35}
 .gallery--square img{aspect-ratio:1;object-fit:cover}
 .gallery{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:2.5rem}
+.gallery--four{grid-template-columns:repeat(4,1fr)}
+.gallery--pair{grid-template-columns:repeat(2,1fr);max-width:1000px;margin-inline:auto}
+.gallery--pair img{aspect-ratio:1200/578;object-fit:cover}
+@media(max-width:860px){.gallery--four{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.gallery--four,.gallery--pair{grid-template-columns:1fr}}
 
 /* --- Before/after compare slider ------------------------------------- */
 .compare{
