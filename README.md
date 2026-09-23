@@ -1,4 +1,4 @@
-# VI Reef Response — website
+# Reef Response — website
 
 A static site for **Reef Response**, the University of the Virgin Islands' coral restoration
 program. No build step, no dependencies — plain HTML/CSS/JS, deployable to GitHub Pages as-is
