@@ -150,6 +150,7 @@ p:last-child{margin-bottom:0}
 .hero__media--photo::after{display:none}
 .feature__media img,.species img{border-radius:var(--radius);width:100%}
 .feature__media img{aspect-ratio:4/3;object-fit:cover}
+.feature__media--tall img{aspect-ratio:3/4}
 .species img{aspect-ratio:3/2;object-fit:cover;border-bottom:1px solid var(--line)}
 .hero__media::after{ /* subtle caustics */
   content:"";position:absolute;inset:-20%;opacity:.16;
