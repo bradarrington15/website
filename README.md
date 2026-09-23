@@ -76,8 +76,6 @@ Outstanding items:
   tax-deductibility / EIN wording)
 - **Site media** — every site on the map shows a "360° tour coming soon" placeholder until it has a
   `photo` or a `video360` in `js/sites.js` (see below)
-- **Additional Projects** — a deliberate "add the next project" marker, showing where a second
-  project section goes
 
 Find them all with `grep -rn "class=\"todo" --include="*.html" .`
 
