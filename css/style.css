@@ -294,6 +294,8 @@ p:last-child{margin-bottom:0}
 .spec__label{font-size:.78rem;color:#A9C6CD;margin-top:.35rem;line-height:1.35}
 .gallery--square img{aspect-ratio:1;object-fit:cover}
 .gallery{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:2.5rem}
+.video{position:relative;padding-top:56.25%;max-width:960px;margin-inline:auto;border-radius:14px;overflow:hidden;background:#000}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .gallery--four{grid-template-columns:repeat(4,1fr)}
 .gallery--pair{grid-template-columns:repeat(2,1fr);max-width:1000px;margin-inline:auto}
 .gallery--pair img{aspect-ratio:1200/578;object-fit:cover}
