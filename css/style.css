@@ -355,6 +355,27 @@ p:last-child{margin-bottom:0}
 .site-detail__media img{width:100%;height:100%;object-fit:cover;display:block}
 .site-detail__media--video{position:relative;padding-top:56.25%;min-height:0}
 .site-detail__media--video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.pano{position:relative;aspect-ratio:16/9;min-height:0;background:#04171c;border-radius:10px;overflow:hidden}
+.pano__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0}
+.pano--flat .pano__video{opacity:1}
+.pano__canvas{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:grab}
+.pano--dragging .pano__canvas{cursor:grabbing}
+.pano__play{
+  position:absolute;inset:0;margin:auto;width:66px;height:66px;border-radius:50%;
+  border:0;background:rgba(0,0,0,.55);cursor:pointer;display:grid;place-items:center;
+}
+.pano__play:hover{background:rgba(0,0,0,.72)}
+.pano__play-icon{
+  width:0;height:0;margin-left:5px;
+  border-left:20px solid #fff;border-top:13px solid transparent;border-bottom:13px solid transparent;
+}
+.pano__hint{
+  position:absolute;left:0;right:0;bottom:.7rem;margin:0;text-align:center;
+  font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.85);
+  text-shadow:0 1px 6px rgba(0,0,0,.6);pointer-events:none;opacity:0;transition:opacity .3s;
+}
+.pano--playing .pano__hint{opacity:1}
+.pano--flat .pano__hint,.pano--flat .pano__canvas{display:none}
 .sitelist__btn{
   font:inherit;color:inherit;background:none;border:0;padding:0;text-align:left;cursor:pointer;
   border-bottom:1px solid transparent;

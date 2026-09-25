@@ -6,7 +6,9 @@
    Optional per site, shown in the panel under the map when present:
      photo: "images/site/<file>.jpg" a still of the site
      video: a YouTube video id for a site video, e.g. "dQw4w9WgXcQ"
-     video360: same, for footage shot in 360 (the player lets you look around) */
+     video360: same, for footage shot in 360 (YouTube plays these flat inside an
+       embed — only youtube.com itself offers drag-to-look)
+     pano: a self-hosted equirectangular MP4, played in our own 360 viewer */
 var REEF_SITES = [
   {
     "name": "Center for Marine and Environmental Studies",
@@ -47,7 +49,7 @@ var REEF_SITES = [
     "region": "St. Thomas — South Shore",
     "type": "research",
     "spawning": true,
-    "video360": "C30vWHdhQDw"
+    "pano": "media/perseverance-360.mp4"
   },
   {
     "name": "Range Cay",

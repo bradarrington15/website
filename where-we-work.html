@@ -11,7 +11,7 @@
 <meta property="og:image" content="images/logo.png">
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="preload" as="image" href="images/photos/hero-map.jpg">
-<link rel="stylesheet" href="css/style.css?v=7">
+<link rel="stylesheet" href="css/style.css?v=8">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 </head>
@@ -190,6 +190,7 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="js/sites.js"></script>
+<script src="js/panorama.js"></script>
 <script>
 (function () {
   if (typeof L === 'undefined' || !document.getElementById('map')) return;
@@ -255,6 +256,7 @@
   // Media slot: a video when the site has one (360 footage if it was shot that way),
   // a still photo when it has one, and a placeholder until either is filmed.
   function media(s) {
+    if (s.pano) { return '<div class="site-detail__media" data-pano="' + esc(s.pano) + '"></div>'; }
     var id = s.video360 || s.video;
     if (id) {
       return '<div class="site-detail__media site-detail__media--video">' +
@@ -283,6 +285,9 @@
       '</div>' + media(s);
     detail.hidden = false;
     detail.querySelector('[data-map-home]').addEventListener('click', resetMap);
+
+    var pano = detail.querySelector('[data-pano]');
+    if (pano && window.REEF_PANORAMA) { REEF_PANORAMA.mount(pano, pano.getAttribute('data-pano')); }
   }
 
   function resetMap() {

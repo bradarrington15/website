@@ -89,13 +89,32 @@ underneath it. The panel's media slot is driven by two optional fields on each s
 { name: "Hull Bay", lat: 18.37, lng: -64.95, region: "St. Thomas — North Shore",
   type: "primary", spawning: false,
   photo: "images/site/hull-bay.jpg",   // a still of the site
-  video: "dQw4w9WgXcQ",               // a YouTube video id for a site video
-  video360: "dQw4w9WgXcQ" }           // same, for footage shot in 360
+  video: "dQw4w9WgXcQ",                // a YouTube video id
+  video360: "dQw4w9WgXcQ",             // same, for 360 footage (plays flat in embeds)
+  pano: "media/hull-bay-360.mp4" }     // a self-hosted 360 clip, in our own viewer
 ```
 
-A video wins over a photo, and `video360` over `video`. Upload the 360 footage to YouTube — it reads the camera's 360
-metadata and serves the drag-to-look player, on phones too — then paste the id from the watch URL
-(`youtube.com/watch?v=THIS_PART`). A site with neither field shows the placeholder.
+`pano` wins over the others, then `video360`, then `video`, then `photo`.
+
+**Why `pano` exists:** YouTube only offers its drag-to-look player on youtube.com itself. A 360 video
+in an embed plays flat on our pages, whatever parameters we pass. So 360 footage we want people to
+explore here is hosted in `media/` and drawn by `js/panorama.js`, which paints the video on the
+inside of a sphere with three.js (fetched from a CDN the first time a panorama opens). Drag, arrow
+keys and the scroll wheel all move the view.
+
+Keep those files under GitHub's 100&nbsp;MB limit. This converter is built into macOS:
+
+```bash
+avconvert --source original-360.mp4 --output media/site-360.mp4 \
+          --preset Preset3840x2160 --duration 20
+```
+
+`media/perseverance-360.mp4` came out of that: 3840x1920, 20 seconds, 56&nbsp;MB. Re-encoding drops
+the spherical metadata, which does not matter here — our player is told the footage is
+equirectangular.
+
+For a plain YouTube video, paste the id from the watch URL (`youtube.com/watch?v=THIS_PART`). A site
+with none of these fields shows the placeholder.
 
 ### Contact form
 
