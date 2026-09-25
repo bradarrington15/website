@@ -203,9 +203,10 @@
     maxNativeZoom: 19
   }).addTo(map);
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_only_labels/{z}/{x}/{y}{r}.png', {
-    attribution: 'Labels &copy; <a href="https://carto.com/attributions">CARTO</a>',
+  // Place names and boundaries, from the same source as the imagery.
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
     maxZoom: 19,
+    maxNativeZoom: 19,
     pane: 'overlayPane'
   }).addTo(map);
 
@@ -251,13 +252,15 @@
                     .replace(/"/g, '&quot;');
   }
 
-  // Media slot: a 360 tour when the site has one, a still photo when it has one,
-  // and a placeholder until either is shot.
+  // Media slot: a video when the site has one (360 footage if it was shot that way),
+  // a still photo when it has one, and a placeholder until either is filmed.
   function media(s) {
-    if (s.video360) {
+    var id = s.video360 || s.video;
+    if (id) {
       return '<div class="site-detail__media site-detail__media--video">' +
-        '<iframe src="https://www.youtube-nocookie.com/embed/' + esc(s.video360) + '?rel=0" ' +
-        'title="360&deg; tour of ' + esc(s.name) + '" frameborder="0" loading="lazy" ' +
+        '<iframe src="https://www.youtube-nocookie.com/embed/' + esc(id) + '?rel=0" ' +
+        'title="' + (s.video360 ? '360&deg; tour of ' : 'Video from ') + esc(s.name) + '" ' +
+        'frameborder="0" loading="lazy" ' +
         'allow="accelerometer; gyroscope; encrypted-media; fullscreen; picture-in-picture" ' +
         'allowfullscreen></iframe></div>';
     }
@@ -265,8 +268,8 @@
       return '<div class="site-detail__media"><img src="' + esc(s.photo) + '" alt="' +
         esc(s.name) + '" loading="lazy" decoding="async"></div>';
     }
-    return '<div class="site-detail__media ph"><b>360&deg; tour coming soon</b>' +
-      '<span>We are filming each site in 360&deg;. Until then, the map is the tour.</span></div>';
+    return '<div class="site-detail__media ph"><b>Footage coming soon</b>' +
+      '<span>We are filming our sites, some of them in 360&deg;. Until then, the map is the tour.</span></div>';
   }
 
   function showSite(s) {

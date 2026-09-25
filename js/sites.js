@@ -5,7 +5,8 @@
    spawning: true marks a spawning hub (drawn with a white centre).
    Optional per site, shown in the panel under the map when present:
      photo: "images/site/<file>.jpg" a still of the site
-     video360: a YouTube video id for a 360 tour, e.g. "dQw4w9WgXcQ" */
+     video: a YouTube video id for a site video, e.g. "dQw4w9WgXcQ"
+     video360: same, for footage shot in 360 (the player lets you look around) */
 var REEF_SITES = [
   {
     "name": "Center for Marine and Environmental Studies",
@@ -45,7 +46,8 @@ var REEF_SITES = [
     "lng": -64.99454,
     "region": "St. Thomas — South Shore",
     "type": "research",
-    "spawning": true
+    "spawning": true,
+    "video": "C30vWHdhQDw"
   },
   {
     "name": "Range Cay",
@@ -53,7 +55,8 @@ var REEF_SITES = [
     "lng": -64.97843,
     "region": "St. Thomas — South Shore",
     "type": "water",
-    "spawning": true
+    "spawning": true,
+    "video": "87PSC-n0jRM"
   },
   {
     "name": "Flat Cay — Leeward",

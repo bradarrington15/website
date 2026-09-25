@@ -75,7 +75,7 @@ Outstanding items:
 - **Donate** (`donate.html`) — the other-giving-options box (cheques, in-kind gifts, sponsorship,
   tax-deductibility / EIN wording)
 - **Site media** — every site on the map shows a "360° tour coming soon" placeholder until it has a
-  `photo` or a `video360` in `js/sites.js` (see below)
+  `photo`, `video` or `video360` in `js/sites.js` (see below)
 
 Find them all with `grep -rn "class=\"todo" --include="*.html" .`
 
@@ -89,10 +89,11 @@ underneath it. The panel's media slot is driven by two optional fields on each s
 { name: "Hull Bay", lat: 18.37, lng: -64.95, region: "St. Thomas — North Shore",
   type: "primary", spawning: false,
   photo: "images/site/hull-bay.jpg",   // a still of the site
-  video360: "dQw4w9WgXcQ" }            // a YouTube video id for a 360 tour
+  video: "dQw4w9WgXcQ",               // a YouTube video id for a site video
+  video360: "dQw4w9WgXcQ" }           // same, for footage shot in 360
 ```
 
-`video360` wins when both are set. Upload the 360 footage to YouTube — it reads the camera's 360
+A video wins over a photo, and `video360` over `video`. Upload the 360 footage to YouTube — it reads the camera's 360
 metadata and serves the drag-to-look player, on phones too — then paste the id from the watch URL
 (`youtube.com/watch?v=THIS_PART`). A site with neither field shows the placeholder.
 
