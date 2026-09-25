@@ -47,7 +47,7 @@ var REEF_SITES = [
     "region": "St. Thomas — South Shore",
     "type": "research",
     "spawning": true,
-    "video": "C30vWHdhQDw"
+    "video360": "C30vWHdhQDw"
   },
   {
     "name": "Range Cay",
