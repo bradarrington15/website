@@ -343,6 +343,18 @@ p:last-child{margin-bottom:0}
 .map-legend span{display:flex;align-items:center;gap:.45rem}
 .map-legend i{width:13px;height:13px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.25)}
 .map-hint{margin-top:.9rem;font-size:.88rem;color:var(--ink-soft)}
+/* Play badge: on markers that have footage, in the legend, and inline in the hint. */
+.map-badge{background:none;border:0}
+.map-badge__play,.legend-play,.map-hint__play{
+  display:inline-block;width:15px;height:15px;border-radius:50%;
+  background:#0E2E36;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.3);position:relative;
+}
+.map-badge__play::after,.legend-play::after,.map-hint__play::after{
+  content:"";position:absolute;top:50%;left:52%;transform:translate(-50%,-50%);
+  border-left:5px solid #fff;border-top:3.5px solid transparent;border-bottom:3.5px solid transparent;
+}
+.legend-play{width:13px;height:13px}
+.map-hint__play{width:14px;height:14px;vertical-align:-2px}
 .site-detail{
   display:grid;grid-template-columns:minmax(260px,1fr) minmax(300px,1.35fr);gap:clamp(1rem,3vw,2rem);
   align-items:center;margin-top:1.5rem;padding:clamp(1.1rem,2.5vw,1.6rem);

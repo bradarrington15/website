@@ -11,7 +11,7 @@
 <meta property="og:image" content="images/logo.png">
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="preload" as="image" href="images/photos/hero-map.jpg">
-<link rel="stylesheet" href="css/style.css?v=8">
+<link rel="stylesheet" href="css/style.css?v=9">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 </head>
@@ -76,11 +76,13 @@
       <span><i style="background:#4DA3FF"></i> Research restoration</span>
       <span><i style="background:#B9C3C7"></i> Auxiliary restoration</span>
       <span><i style="background:#4DA3FF;box-shadow:inset 0 0 0 2px #fff"></i> White centre &middot; spawning hub</span>
+      <span><i class="legend-play" aria-hidden="true"></i> Has video to watch</span>
     </div>
 
     <div id="site-detail" class="site-detail" hidden aria-live="polite"></div>
     <p class="map-hint">Select a marker &mdash; or any site in the index below &mdash; to zoom in and
-      see that location.</p>
+      see that location. Markers with a <span class="map-hint__play" aria-hidden="true"></span> have
+      video from the site.</p>
     <noscript>
       <p class="callout callout--aqua" style="margin-top:1.5rem">The interactive map needs
         JavaScript. All site names are listed below.</p>
@@ -247,6 +249,20 @@
         radius: 2.5, color: '#fff', weight: 0, fillColor: '#fff', fillOpacity: 1, interactive: false
       }).addTo(group);
     }
+
+    // Sites with footage wear a small play badge, so there is a reason to tap them.
+    if (s.pano || s.video360 || s.video) {
+      L.marker([s.lat, s.lng], {
+        icon: L.divIcon({
+          className: 'map-badge',
+          html: '<span class="map-badge__play" aria-hidden="true"></span>',
+          iconSize: [16, 16],
+          iconAnchor: [-5, 15]
+        }),
+        interactive: false,
+        keyboard: false
+      }).addTo(group);
+    }
   });
 
   group.addTo(map);
@@ -299,6 +315,14 @@
 
     var pano = detail.querySelector('[data-pano]');
     if (pano && window.REEF_PANORAMA) { REEF_PANORAMA.mount(pano, pano.getAttribute('data-pano')); }
+
+    // The panel sits under the map, so on a phone it opens off-screen. Scroll it
+    // into view — the least we can do, since nobody taps what they cannot see.
+    if (window.matchMedia('(max-width: 860px)').matches) {
+      window.setTimeout(function () {
+        detail.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 350);
+    }
   }
 
   function resetMap() {
