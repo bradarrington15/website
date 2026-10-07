@@ -317,8 +317,10 @@
     if (pano && window.REEF_PANORAMA) { REEF_PANORAMA.mount(pano, pano.getAttribute('data-pano')); }
 
     // The panel sits under the map, so on a phone it opens off-screen. Scroll it
-    // into view — the least we can do, since nobody taps what they cannot see.
-    if (window.matchMedia('(max-width: 860px)').matches) {
+    // into view when there is footage waiting there — until more sites are filmed,
+    // pulling the map away to show a "coming soon" card is not worth the jolt.
+    var hasFootage = s.pano || s.video360 || s.video;
+    if (hasFootage && window.matchMedia('(max-width: 860px)').matches) {
       window.setTimeout(function () {
         detail.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }, 350);
