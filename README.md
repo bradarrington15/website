@@ -72,8 +72,6 @@ grep -rn "TODO" --include="*.html" .
 
 Outstanding items:
 
-- **Donate** (`donate.html`) — the other-giving-options box (cheques, in-kind gifts, sponsorship,
-  tax-deductibility / EIN wording)
 - **Site media** — every site on the map shows a "360° tour coming soon" placeholder until it has a
   `photo`, `video` or `video360` in `js/sites.js` (see below)
 
