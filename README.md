@@ -114,6 +114,28 @@ equirectangular.
 For a plain YouTube video, paste the id from the watch URL (`youtube.com/watch?v=THIS_PART`). A site
 with none of these fields shows the placeholder.
 
+### Search, answer engines and sharing
+
+Every page carries a canonical URL, Open Graph and Twitter card tags, and a 1200x630 share image in
+`images/og/` (generated from that page's hero). `sitemap.xml` and `robots.txt` sit at the root;
+the sitemap's `lastmod` dates come from each file's last commit, so regenerate it when pages change.
+
+Pages also carry JSON-LD structured data, which is what search engines and AI assistants read for
+facts rather than inferring them from prose:
+
+| Page | Nodes |
+| --- | --- |
+| `index.html` | NGO (name, address, socials, parent university), WebSite, WebPage, VideoObject |
+| `about.html` | WebPage + a Person for each team member, generated from the page's own markup |
+| `where-we-work.html` | WebPage + an ItemList of all 24 sites with coordinates, from `js/sites.js` |
+| `research.html` | WebPage + VideoObject for the deep outplanting documentary |
+| all others | WebPage |
+
+Two things to keep in mind. The videos have no `uploadDate`, which Google wants before it will show
+a video rich result — add it if you know the dates. And every absolute URL points at
+`bradarrington15.github.io/website/`; moving to a real domain means updating them (they are all in
+the `<head>` blocks, the sitemap and `robots.txt`).
+
 ### Contact form
 
 GitHub Pages can't process form submissions. The form on `contact.html` therefore has a small

@@ -1,0 +1,7 @@
+# Reef Response — https://bradarrington15.github.io/website/
+# Everything here is public and may be crawled, including by AI crawlers.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://bradarrington15.github.io/website/sitemap.xml
