@@ -116,6 +116,14 @@ with none of these fields shows the placeholder.
 
 ### Search, answer engines and sharing
 
+**This copy is deliberately kept out of search.** Every page carries
+`<meta name="robots" content="noindex, nofollow">` so that the GitHub Pages copy never competes with
+reefresponse.org for the organisation's own name. `robots.txt` still allows crawling, on purpose: a
+blocked page cannot be read, so Google would never see the noindex and could list the bare URL
+anyway. **When the site moves to the real domain**, remove the noindex tag from all 11 pages, restore
+the `Sitemap:` line in `robots.txt`, and update every absolute URL (canonical tags, Open Graph, the
+JSON-LD blocks and `sitemap.xml`) from `bradarrington15.github.io/website/` to the new domain.
+
 Every page carries a canonical URL, Open Graph and Twitter card tags, and a 1200x630 share image in
 `images/og/` (generated from that page's hero). `sitemap.xml` and `robots.txt` sit at the root;
 the sitemap's `lastmod` dates come from each file's last commit, so regenerate it when pages change.

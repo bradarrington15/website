@@ -1,7 +1,14 @@
-# Reef Response — https://bradarrington15.github.io/website/
-# Everything here is public and may be crawled, including by AI crawlers.
+# Reef Response — staging copy on GitHub Pages.
+# The live site will be reefresponse.org; this copy is kept out of search so the two
+# do not compete. Every page carries <meta name="robots" content="noindex, nofollow">.
+#
+# Crawling stays allowed on purpose: a blocked page cannot be read, so Google would
+# never see the noindex tag and could list the bare URL anyway.
+#
+# When the site moves to the real domain, remove the noindex tags from every page and
+# restore the sitemap line below.
 
 User-agent: *
 Allow: /
 
-Sitemap: https://bradarrington15.github.io/website/sitemap.xml
+# Sitemap: https://reefresponse.org/sitemap.xml
