@@ -80,8 +80,10 @@ Find them all with `grep -rn "class=\"todo" --include="*.html" .`
 ### Growth scrubber
 
 `restore.html` carries a time slider showing one *Acropora prolifera* outplant from 2022 to 2025
-(`images/growth/`, driven by the `[data-growth]` block in `js/main.js`). The frames are cross-faded,
-not swapped, so the colony appears to grow in place.
+(`images/growth/`, driven by the `[data-growth]` block in `js/main.js`). The photo can be grabbed and
+dragged as well as the slider moved; position is continuous while dragging, so neighbouring years
+blend rather than cut, and it settles on the nearest year when released. Arrow keys step a whole
+year.
 
 The source photos were shot from different distances and angles, so each one is cropped to put the
 colony's base at the same point in frame, with the crop width chosen so the colony fills a steadily

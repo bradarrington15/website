@@ -301,10 +301,15 @@ p:last-child{margin-bottom:0}
 .gallery{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:2.5rem}
 /* --- Growth scrubber -------------------------------------------------- */
 .growth{max-width:900px;margin:0 auto}
-.growth__stage{position:relative;aspect-ratio:3/2;border-radius:14px;overflow:hidden;background:var(--deep)}
-.growth__stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .45s ease}
-.growth__stage img.is-on{opacity:1}
-.growth__range{width:100%;margin:1.1rem 0 .4rem;accent-color:var(--red);cursor:pointer}
+.growth__stage{
+  position:relative;aspect-ratio:3/2;border-radius:14px;overflow:hidden;background:var(--deep);
+  cursor:grab;touch-action:pan-y;user-select:none;
+}
+.growth.is-dragging .growth__stage{cursor:grabbing}
+.growth__stage img{-webkit-user-drag:none}
+.growth__stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0}
+.growth__range{width:100%;margin:1.1rem 0 .4rem;accent-color:var(--red);cursor:grab}
+.growth__range:active{cursor:grabbing}
 .growth__ticks{display:flex;justify-content:space-between;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
 .growth__ticks span{flex:1;text-align:center;transition:color .2s}
 .growth__ticks span:first-child{text-align:left}
