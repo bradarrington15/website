@@ -38,3 +38,22 @@
     set();
   });
 })();
+
+/* Growth scrubber: one coral, several years. The frames are stacked and cross-faded,
+   so moving the slider reads as the colony growing rather than photos swapping. */
+(function () {
+  document.querySelectorAll('[data-growth]').forEach(function (box) {
+    var range = box.querySelector('.growth__range');
+    var frames = box.querySelectorAll('.growth__stage img');
+    var ticks = box.querySelectorAll('.growth__ticks span');
+    if (!range || !frames.length) return;
+
+    function show() {
+      var i = parseInt(range.value, 10);
+      frames.forEach(function (img, n) { img.classList.toggle('is-on', n === i); });
+      ticks.forEach(function (t, n) { t.classList.toggle('is-on', n === i); });
+    }
+    range.addEventListener('input', show);
+    show();
+  });
+})();

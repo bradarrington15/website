@@ -21,7 +21,7 @@
 <link rel="canonical" href="https://bradarrington15.github.io/website/restore.html">
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="preload" as="image" href="images/photos/hero-restoration.jpg">
-<link rel="stylesheet" href="css/style.css?v=10">
+<link rel="stylesheet" href="css/style.css?v=11">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -152,6 +152,36 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="section section--sand" id="growth">
+  <div class="wrap">
+    <div class="narrow" style="margin-bottom:2rem">
+      <span class="eyebrow">Three years on the reef</span>
+      <h2>Watch one coral grow</h2>
+      <hr class="rule">
+      <p class="lede">This is a single outplanted colony of <em>Acropora prolifera</em>, photographed
+        on the same reef from 2022 to 2025. Drag the slider to move through time.</p>
+    </div>
+
+    <figure class="growth" data-growth>
+      <div class="growth__stage">
+        <img src="images/growth/apro-2022-02.jpg" width="1200" height="800" class="is-on"
+             decoding="async" alt="The outplanted colony in February 2022: a few short, stubby branches on bare rock">
+        <img src="images/growth/apro-2023-06.jpg" width="1200" height="800" loading="lazy"
+             decoding="async" alt="The same colony in June 2023, now a cluster of upright branches">
+        <img src="images/growth/apro-2025-06.jpg" width="1200" height="800" loading="lazy"
+             decoding="async" alt="The same colony in June 2025, a broad table of branches with an encrusting base">
+      </div>
+      <input class="growth__range" type="range" min="0" max="2" step="1" value="0"
+             aria-label="Move through time: February 2022, June 2023, June 2025">
+      <div class="growth__ticks" aria-hidden="true">
+        <span class="is-on">Feb 2022</span><span>Jun 2023</span><span>Jun 2025</span>
+      </div>
+      <figcaption>Photographed at the same site each year. The frames are cropped to hold the colony
+        in one place, so what changes between them is the coral.</figcaption>
+    </figure>
   </div>
 </section>
 

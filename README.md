@@ -77,6 +77,19 @@ Outstanding items:
 
 Find them all with `grep -rn "class=\"todo" --include="*.html" .`
 
+### Growth scrubber
+
+`restore.html` carries a time slider showing one *Acropora prolifera* outplant from 2022 to 2025
+(`images/growth/`, driven by the `[data-growth]` block in `js/main.js`). The frames are cross-faded,
+not swapped, so the colony appears to grow in place.
+
+The source photos were shot from different distances and angles, so each one is cropped to put the
+colony's base at the same point in frame, with the crop width chosen so the colony fills a steadily
+larger share of it (45%, 62%, 84%) — the growth is real, but the apparent scale is a judgement call,
+not a measurement. Channel means are matched halfway towards the middle frame so the cross-fade does
+not flash. Originals are in `Desktop/reef response website/APRO/`; two further frames (2022-06 and
+2024-10) were left out, the latter because it was shot too close to sit in the sequence.
+
 ### Site media on the map
 
 Clicking a marker — or a site name in the index — zooms the map to that location and opens a panel
