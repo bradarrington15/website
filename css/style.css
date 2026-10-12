@@ -239,6 +239,11 @@ p:last-child{margin-bottom:0}
   .feature{grid-template-columns:1fr 1fr}
   .feature--flip .feature__media{order:2}
 }
+/* Stacked on a phone, a flipped feature puts its photo under the text, so a section
+   that opens with a photo does not end up showing two in a row. */
+@media(max-width:859px){
+  .feature--flip .feature__media{order:2}
+}
 
 /* --- Image placeholder (replace before launch) --------------------------- */
 .ph{
