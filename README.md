@@ -11,9 +11,9 @@ and straightforward to port into Wix later.
 | `index.html` | Home — mission, why reefs matter, key elements of restoration, history timeline |
 | `about.html` | Mission & goals, citizen science, bleaching reports, sick-coral ID, team |
 | `our-work.html` | Landing page for the three R's, plus Rescue to Reef at Lovango Cay |
-| `rescue.html` | Fragments of opportunity, the land-based gene bank, the featured coral species |
+| `rescue.html` | Fragments of opportunity, anchor damage, the gene bank, disease treatment, species |
 | `research.html` | Monitoring, the artificial reef, room for further projects |
-| `restore.html` | Microfragmentation, in-water nurseries, outplanting |
+| `restore.html` | Growth scrubber, microfragmentation, nurseries, outplanting, coral spawning |
 | `outreach.html` | Outreach & education — Corals in the Classroom, teacher contact, community outreach |
 | `where-we-work.html` | Interactive Leaflet map of 24 field sites + site index |
 | `get-involved.html` | Ways to help (report, donate, partner), partners, downloads |
