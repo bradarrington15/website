@@ -146,6 +146,12 @@ p:last-child{margin-bottom:0}
   linear-gradient(135deg,#0E4D5C 0%,#12667A 45%,#0B3C49 100%);
 }
 .hero__media--photo{background:var(--deep) center/cover no-repeat}
+/* About: nudge the group shot right of the headline, so the banner and the divers
+   holding it sit in clear water rather than behind the text. */
+.hero__media--about{background-position:center 30%}
+@media(min-width:860px){
+  .hero__media--about{background-size:140% auto;background-position:0 30%}
+}
 .hero__media--photo::before{
   content:"";position:absolute;inset:0;
   background:linear-gradient(180deg,rgba(11,60,73,.52) 0%,rgba(11,60,73,.68) 50%,rgba(35,31,32,.90) 100%);
