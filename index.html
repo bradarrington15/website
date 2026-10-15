@@ -21,7 +21,7 @@
 <link rel="canonical" href="https://bradarrington15.github.io/website/">
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="preload" as="image" href="images/photos/hero-home.jpg">
-<link rel="stylesheet" href="css/style.css?v=17">
+<link rel="stylesheet" href="css/style.css?v=18">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -239,36 +239,34 @@
   </div>
 </section>
 
-<section class="section section--deep" id="healthy-vs-bleached">
+<section class="section section--deep" id="growth">
   <div class="wrap">
-    <div class="feature">
-      <div>
-        <span class="eyebrow">See the difference</span>
-        <h2>Healthy vs. bleached</h2>
-        <hr class="rule">
-        <p class="lede">Drag the slider to see the same coral, a lobed star coral
-          (<em>Orbicella annularis</em>), healthy and then after bleaching.</p>
-        <p>When the water gets too warm, corals expel the algae living in their tissue &mdash; the algae
-          that give them their colour and most of their food. What&rsquo;s left is a white, starving
-          coral that can recover if temperatures drop, or die if they don&rsquo;t. Lobed star coral is
-          <a href="rescue.html#species">listed as endangered</a>, and it&rsquo;s a focus of the
-          <a href="restore.html#microfragmentation">microfragmentation</a> work in our land-based
-          nursery.</p>
-      </div>
-      <div class="feature__media">
-        <div class="compare compare--square">
-          <img src="images/photos/compare-bleached.jpg" width="720" height="720" alt="The same lobed star coral colony after bleaching, its tissue turned almost completely white" fetchpriority="low" decoding="async">
-          <div class="compare__top">
-            <img src="images/photos/compare-healthy.jpg" width="720" height="720" alt="A healthy lobed star coral colony (Orbicella annularis) on a cement puck, dark brown with its polyps clearly visible" fetchpriority="low" decoding="async">
-          </div>
-          <span class="compare__label compare__label--left">Healthy</span>
-          <span class="compare__label compare__label--right">Bleached</span>
-          <input class="compare__range" type="range" min="0" max="100" value="50" step="0.5"
-                 aria-label="Comparison slider: move left to see more of the bleached coral, right to see more of the healthy coral">
-          <span class="compare__handle" aria-hidden="true"></span>
-        </div>
-      </div>
+    <div class="narrow" style="margin-bottom:2rem">
+      <span class="eyebrow">Three years on the reef</span>
+      <h2>Watch one coral grow</h2>
+      <hr class="rule">
+      <p class="lede">This is a single outplanted colony of fused staghorn
+        (<em>Acropora prolifera</em>), photographed on the same reef from 2022 to 2025. Drag the
+        photo or the slider to move through time.</p>
     </div>
+
+    <figure class="growth" data-growth>
+      <div class="growth__stage" title="Drag to move through time">
+        <img src="images/growth/apro-2022-02.jpg" width="1200" height="800"
+             decoding="async" alt="The outplanted colony in February 2022: a few short, stubby branches on bare rock">
+        <img src="images/growth/apro-2023-06.jpg" width="1200" height="800" loading="lazy"
+             decoding="async" alt="The same colony in June 2023, now a cluster of upright branches">
+        <img src="images/growth/apro-2025-06.jpg" width="1200" height="800" loading="lazy"
+             decoding="async" alt="The same colony in June 2025, a broad table of branches with an encrusting base">
+      </div>
+      <input class="growth__range" type="range" min="0" max="2" step="0.01" value="0"
+             aria-label="Move through time: February 2022, June 2023, June 2025">
+      <div class="growth__ticks" aria-hidden="true">
+        <span class="is-on">Feb 2022</span><span>Jun 2023</span><span>Jun 2025</span>
+      </div>
+      <figcaption>Photographed at the same site each year. The frames are cropped to hold the colony
+        in one place, so what changes between them is the coral.</figcaption>
+    </figure>
   </div>
 </section>
 

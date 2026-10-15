@@ -328,6 +328,10 @@ p:last-child{margin-bottom:0}
 .growth__ticks span:last-child{text-align:right}
 .growth__ticks span.is-on{color:var(--red);font-weight:700}
 .growth figcaption{margin-top:1rem}
+/* The scrubber now sits on a deep band on the homepage, so its labels need to lift. */
+.section--deep .growth__ticks{color:#9DBBC3}
+.section--deep .growth__ticks span.is-on{color:#7FE3DC}
+.section--deep .growth figcaption{color:#9DBBC3}
 
 .video{position:relative;padding-top:56.25%;max-width:960px;margin-inline:auto;border-radius:14px;overflow:hidden;background:#000}
 .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}

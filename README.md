@@ -13,7 +13,7 @@ and straightforward to port into Wix later.
 | `our-work.html` | Landing page for the three R's, plus Rescue to Reef at Lovango Cay |
 | `rescue.html` | Fragments of opportunity, anchor damage, the gene bank, disease treatment, species |
 | `research.html` | Monitoring, the artificial reef, room for further projects |
-| `restore.html` | Growth scrubber, microfragmentation, nurseries, outplanting, coral spawning |
+| `restore.html` | Microfragmentation, nurseries, outplanting, coral spawning |
 | `outreach.html` | Outreach & education — Corals in the Classroom, teacher contact, community outreach |
 | `where-we-work.html` | Interactive Leaflet map of 24 field sites + site index |
 | `get-involved.html` | Ways to help (report, donate, partner), partners, downloads |
@@ -79,7 +79,7 @@ Find them all with `grep -rn "class=\"todo" --include="*.html" .`
 
 ### Growth scrubber
 
-`restore.html` carries a time slider showing one *Acropora prolifera* outplant from 2022 to 2025
+`index.html` carries a time slider showing one *Acropora prolifera* outplant from 2022 to 2025
 (`images/growth/`, driven by the `[data-growth]` block in `js/main.js`). The photo can be grabbed and
 dragged as well as the slider moved; position is continuous while dragging, so neighbouring years
 blend rather than cut, and it settles on the nearest year when released. Arrow keys step a whole
