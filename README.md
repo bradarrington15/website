@@ -181,13 +181,21 @@ Still to do: verify the domain in Google Search Console and Bing Webmaster Tools
 
 ### Contact form
 
-GitHub Pages can't process form submissions. The form on `contact.html` therefore has a small
-script at the bottom of that page which intercepts submit and composes a `mailto:` to
-reefresponse@uvi.edu from the fields, so nothing a visitor writes is silently discarded.
+GitHub Pages can't process a POST, so the form on `contact.html` is submitted by
+`js/contact-form.js` to a third-party form endpoint, named in `data-endpoint` on the `<form>`:
 
-At the Wix port, replace the `<form>` with a Wix Forms element and delete that script. To use a
-real endpoint before then (e.g. [Formspree](https://formspree.io)), put it in the form's `action`
-and delete the script.
+| Provider | `data-endpoint` | Notes |
+| --- | --- | --- |
+| [Formspree](https://formspree.io) | `https://formspree.io/f/xxxxxxxx` | Free tier is 50 submissions a month |
+| [Web3Forms](https://web3forms.com) | `https://api.web3forms.com/submit` | Also paste the access key into the hidden `access_key` input |
+
+Both take a plain `FormData` POST and answer with JSON, so either works without touching the
+script. The script posts in the background and writes the outcome into `#form-status` — the page
+never navigates away, and a failed send keeps what the visitor typed.
+
+**While `data-endpoint` is empty the form falls back to composing a `mailto:` to
+reefresponse@uvi.edu**, so a message is never silently dropped. A hidden `_gotcha` field catches
+bots that fill in every input; both providers honour it.
 
 
 ## Porting to Wix

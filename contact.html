@@ -20,7 +20,7 @@
 <link rel="canonical" href="https://reefresponse.org/contact.html">
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="preload" as="image" href="images/photos/hero-contact.jpg">
-<link rel="stylesheet" href="css/style.css?v=19">
+<link rel="stylesheet" href="css/style.css?v=20">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -100,17 +100,23 @@
           person. We read everything, though response times vary with the field season.</p>
 
         <!-- ─────────────────────────────────────────────────────────────────────────
-             PORTING TO WIX: replace this whole <form> with a Wix Forms element and
-             delete the <script> at the bottom of this file.
+             GitHub Pages cannot process a POST, so submissions go to a form
+             endpoint. Put yours in data-endpoint below:
 
-             UNTIL THEN: GitHub Pages cannot process form submissions, so the script
-             intercepts submit and opens the visitor's mail client with the fields
-             pre-filled, addressed to reefresponse@uvi.edu. Nothing is silently
-             discarded. To use a real endpoint instead (e.g. Formspree), put it in
-             the action below and delete the script.
+               Formspree   https://formspree.io/f/xxxxxxxx
+               Web3Forms   https://api.web3forms.com/submit  (plus the access key
+                           in the hidden input further down)
+
+             While data-endpoint is empty the form falls back to opening the
+             visitor's mail client, addressed to reefresponse@uvi.edu, so nothing
+             a visitor writes is lost. See js/contact-form.js.
              ───────────────────────────────────────────────────────────────────────── -->
-        <form class="form" id="contact-form" action="mailto:reefresponse@uvi.edu" method="POST"
-              enctype="text/plain">
+        <form class="form" id="contact-form" data-endpoint="">
+          <!-- Web3Forms only: paste the access key here. Formspree ignores it. -->
+          <input type="hidden" name="access_key" value="">
+          <!-- Spam trap: real people leave it empty, bots fill it in. -->
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true"
+                 style="position:absolute;left:-9999px">
           <div class="field">
             <label for="name">Name</label>
             <input id="name" name="name" type="text" autocomplete="name" required>
@@ -136,8 +142,8 @@
           <div>
             <button class="btn btn--lg" type="submit">Submit</button>
           </div>
-          <p class="form__note">Submitting opens your email app with this message ready to send.
-            You can also write to us directly at
+          <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+          <p class="form__note">You can also write to us directly at
             <a href="mailto:reefresponse@uvi.edu">reefresponse@uvi.edu</a>.</p>
         </form>
 
@@ -272,5 +278,6 @@
 </script>
 
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+<script src="js/contact-form.js"></script>
 </body>
 </html>
