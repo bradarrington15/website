@@ -184,14 +184,14 @@ Still to do: verify the domain in Google Search Console and Bing Webmaster Tools
 GitHub Pages can't process a POST, so the form on `contact.html` is submitted by
 `js/contact-form.js` to a third-party form endpoint, named in `data-endpoint` on the `<form>`:
 
-| Provider | `data-endpoint` | Notes |
-| --- | --- | --- |
-| [Formspree](https://formspree.io) | `https://formspree.io/f/xxxxxxxx` | Free tier is 50 submissions a month |
-| [Web3Forms](https://web3forms.com) | `https://api.web3forms.com/submit` | Also paste the access key into the hidden `access_key` input |
+it currently points at [Formspree](https://formspree.io) (`https://formspree.io/f/xgaaejre`),
+whose free tier carries 50 submissions a month. [Web3Forms](https://web3forms.com) works as a
+drop-in replacement: set `data-endpoint` to `https://api.web3forms.com/submit` and add a hidden
+`access_key` input. Both take a plain `FormData` POST and answer with JSON, so neither needs a
+change to the script.
 
-Both take a plain `FormData` POST and answer with JSON, so either works without touching the
-script. The script posts in the background and writes the outcome into `#form-status` — the page
-never navigates away, and a failed send keeps what the visitor typed.
+The script posts in the background and writes the outcome into `#form-status` — the page never
+navigates away, and a failed send keeps what the visitor typed.
 
 **While `data-endpoint` is empty the form falls back to composing a `mailto:` to
 reefresponse@uvi.edu**, so a message is never silently dropped. A hidden `_gotcha` field catches

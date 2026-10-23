@@ -100,20 +100,14 @@
           person. We read everything, though response times vary with the field season.</p>
 
         <!-- ─────────────────────────────────────────────────────────────────────────
-             GitHub Pages cannot process a POST, so submissions go to a form
-             endpoint. Put yours in data-endpoint below:
+             GitHub Pages cannot process a POST, so submissions go to Formspree,
+             which emails them on. js/contact-form.js posts there in the
+             background and reports the outcome below the button.
 
-               Formspree   https://formspree.io/f/xxxxxxxx
-               Web3Forms   https://api.web3forms.com/submit  (plus the access key
-                           in the hidden input further down)
-
-             While data-endpoint is empty the form falls back to opening the
-             visitor's mail client, addressed to reefresponse@uvi.edu, so nothing
-             a visitor writes is lost. See js/contact-form.js.
+             Emptying data-endpoint falls the form back to composing a mailto: to
+             reefresponse@uvi.edu, so a message is never silently dropped.
              ───────────────────────────────────────────────────────────────────────── -->
-        <form class="form" id="contact-form" data-endpoint="">
-          <!-- Web3Forms only: paste the access key here. Formspree ignores it. -->
-          <input type="hidden" name="access_key" value="">
+        <form class="form" id="contact-form" data-endpoint="https://formspree.io/f/xgaaejre">
           <!-- Spam trap: real people leave it empty, bots fill it in. -->
           <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true"
                  style="position:absolute;left:-9999px">
