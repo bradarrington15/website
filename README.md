@@ -131,13 +131,10 @@ with none of these fields shows the placeholder.
 
 ### Search, answer engines and sharing
 
-**This copy is deliberately kept out of search.** Every page carries
-`<meta name="robots" content="noindex, nofollow">` so that the GitHub Pages copy never competes with
-reefresponse.org for the organisation's own name. `robots.txt` still allows crawling, on purpose: a
-blocked page cannot be read, so Google would never see the noindex and could list the bare URL
-anyway. Absolute URLs (canonical tags, Open Graph, the JSON-LD blocks and `sitemap.xml`) already
-point at `https://reefresponse.org`, so at go-live only the noindex tags and the `Sitemap:` line
-need touching. See **Going live on reefresponse.org** below.
+The site is live at **reefresponse.org**, served by GitHub Pages from this repository. Absolute
+URLs (canonical tags, Open Graph, the JSON-LD blocks and `sitemap.xml`) all point at that domain,
+`robots.txt` allows crawling and names the sitemap, and no page carries a `noindex` tag. See
+**Going live on reefresponse.org** below for how the switch was made.
 
 Every page carries a canonical URL, Open Graph and Twitter card tags, and a 1200x630 share image in
 `images/og/` (generated from that page's hero). `sitemap.xml` and `robots.txt` sit at the root;
@@ -163,27 +160,24 @@ The domain is registered with Wix and its nameservers are Wix's, but Wix cannot 
 its editor only serves pages built in the editor. The site therefore stays on GitHub Pages and the
 domain is pointed at it. There are no MX or TXT records on the domain, so no mail to break.
 
-Three things are prepared in the repo and inert until the switch:
+What the switch involved, in the order it was done:
 
-| Prepared | What it is |
-| --- | --- |
-| `deploy/CNAME` | The GitHub Pages custom-domain file. **Kept out of the repo root on purpose** — the moment a `CNAME` sits at the root, Pages redirects `bradarrington15.github.io/website/` to the domain, which would break the staging copy before DNS moves. Move it to the root as the last step. |
-| Redirect stubs | `about-us/`, `meet-the-team/`, `get-involved/`, `restoration/`, `make-a-donation-1/`, `make-a-donation-2-hide-for-now/`, `contact/` — the page paths the current Wix site has indexed. Each is an `index.html` carrying a canonical tag and a redirect to its replacement, so inbound links and search results survive the switch. |
-| Absolute URLs | Already swapped to `https://reefresponse.org` throughout. |
+1. Repo Settings - Pages - Custom domain `reefresponse.org`. GitHub commits a `CNAME` file to the
+   repo root; from that moment `bradarrington15.github.io/website/` redirects to the domain.
+2. DNS at Wix (Domains - Manage DNS Records): four A records on the apex — `185.199.108.153`,
+   `185.199.109.153`, `185.199.110.153`, `185.199.111.153` — replacing Wix's `185.230.63.x`
+   records, and the `www` CNAME repointed from `cdn3.wixdns.net` to `bradarrington15.github.io`.
+   The domain was left assigned to the Wix site; the records held.
+3. The `noindex` tags came off all 11 pages and `robots.txt` regained its `Sitemap:` line.
+4. Enforce HTTPS in Pages settings, once GitHub had issued the certificate.
 
-The order that avoids downtime:
+The old Wix page paths live on as redirect stubs: `about-us/`, `meet-the-team/`, `get-involved/`,
+`restoration/`, `make-a-donation-1/`, `make-a-donation-2-hide-for-now/` and `contact/`. Each is an
+`index.html` with a canonical tag and a redirect to its replacement, so inbound links and old search
+results still land somewhere sensible. They can go once the old URLs stop appearing in the logs.
 
-1. Disconnect the domain from the Wix site (Wix will not let you edit DNS while a site is connected).
-2. Point DNS at GitHub: four A records on the apex — `185.199.108.153`, `185.199.109.153`,
-   `185.199.110.153`, `185.199.111.153` — and a CNAME on `www` to `bradarrington15.github.io`.
-3. Move `deploy/CNAME` to the repo root, commit, push.
-4. In the repo: Settings - Pages - Custom domain `reefresponse.org`, then Enforce HTTPS once the
-   certificate is issued (minutes, occasionally up to a day).
-5. Remove `<meta name="robots" content="noindex, nofollow">` from all 11 pages and uncomment the
-   `Sitemap:` line in `robots.txt`.
-6. Verify the domain in Google Search Console and Bing Webmaster Tools, submit `sitemap.xml`, and
-   spot-check the old Wix paths above.
-7. Only then downgrade or cancel the Wix plan. Keep the domain registration itself.
+Still to do: verify the domain in Google Search Console and Bing Webmaster Tools and submit
+`sitemap.xml`. The Wix plan can be downgraded, but keep the domain registration itself.
 
 ### Contact form
 
